@@ -30,7 +30,7 @@ function Campaign({ setEnable }) {
   ];
 
   const handleSelect = (data) => {
-    if (data === "instargram") {
+    if (data === "Instargram") {
       setActiveOption(!activeOption);
     }
     const { ...newData } = appState;

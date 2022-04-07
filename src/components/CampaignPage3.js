@@ -1,19 +1,21 @@
-import React, { useState } from "react";
+import React, { useContext } from "react";
 import addBtn from "../assets/plus.png";
-// import { AppContext } from "../App";
-function Campaign({setEnable}) {
-  const [image, setImage] = useState("");
-  // const state = useContext(AppContext);
-  if (image !== "") {
+import { AppContext } from "../App";
+function Campaign({ setEnable }) {
+  const { appState, setAppState } = useContext(AppContext);
+
+  if (appState.campaignImage !== "") {
     setEnable(true);
   }
   const onFileChange = (e) => {
     const reader = new FileReader();
     reader.onload = () => {
       if (reader.readyState === 2) {
-        setImage(reader.result);
+        const { ...newData } = appState;
+        newData.campaignImage = reader.result;
+        setAppState(newData);
       }
-    }
+    };
     reader.readAsDataURL(e.target.files[0]);
   };
   return (
@@ -21,13 +23,13 @@ function Campaign({setEnable}) {
       <h3 className="heading">Please Select Image</h3>
       <div className="imageContainer">
         <div className="addImage addBtn">
-          <input type="file" id="image" onChange={onFileChange}/>
+          <input type="file" id="image" onChange={onFileChange} />
           <label htmlFor="image">
-            <img src={addBtn} alt=""  />
+            <img src={addBtn} alt="" />
           </label>
         </div>
         <div className="addImage image">
-          <img src={image} alt="" />
+          <img src={appState.campaignImage} alt="" />
         </div>
       </div>
     </div>

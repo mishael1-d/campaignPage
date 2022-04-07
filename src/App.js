@@ -12,7 +12,7 @@ function App() {
     serviceDescription: "",
     platform: [],
     followers: "",
-    targetGender: "",
+    targetGender: "Select your gender",
     categories: [],
   });
 

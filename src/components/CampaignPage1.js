@@ -3,8 +3,6 @@ import { AppContext } from "../App";
 
 function Campaign({ setEnable }) {
   const state = useContext(AppContext);
-  // console.log(state.appState);
-  // const [campaignName, setCampaignName] = useState("")
   if (state.appState.campaignName !== "") {
     setEnable(true);
   } 

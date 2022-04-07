@@ -1,15 +1,18 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
+import {AppContext} from "../App"
 import arrowDown from "../assets/arrow-down-black.png";
 function Campaign({setEnable}) {
   const [showGender, setShowGender] = useState(false);
-  const [gender, setGender] = useState("Select your gender");
-
+  // const [gender, setGender] = useState("Select your gender");
+const {appState, setAppState} = useContext(AppContext)
   const handleGenderSelect = (e) => {
-    setGender(e.target.innerText);
-    setShowGender(!showGender);
-    if (gender !== "Select your gender"){
+    if (appState.targetGender !== ""){
       setEnable(true)
     }
+    setShowGender(!showGender);
+    const {...newData} = appState
+    newData.targetGender = e.target.innerText
+    setAppState(newData)
   };
 
   return (
@@ -19,7 +22,7 @@ function Campaign({setEnable}) {
         className="optionContainer"
         onClick={() => setShowGender(!showGender)}
       >
-        <p className="option-value">{gender}</p>
+        <p className="option-value">{appState.targetGender}</p>
         <img src={arrowDown} alt="" />
       </div>
       {showGender && (

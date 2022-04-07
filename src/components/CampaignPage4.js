@@ -3,7 +3,6 @@ import { AppContext } from "../App";
 function Campaign({ setEnable }) {
   const [activeOptionA, setActiveOptionA] = useState(false);
   const [activeOptionB, setActiveOptionB] = useState(false);
-  // const [value, setValue] = useState([])
   const state = useContext(AppContext);
 
   if (
