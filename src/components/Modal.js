@@ -1,3 +1,4 @@
+/* eslint-disable array-callback-return */
 import React, { useContext, useState } from "react";
 import { AppContext } from "../App";
 import checkbox from "../assets/checkbox.png";
@@ -59,7 +60,6 @@ function Modal({ closeModal }) {
             ) {
               return category;
             }
-            return category
           })
           .map((category) => {
             return (
