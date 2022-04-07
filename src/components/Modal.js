@@ -51,7 +51,7 @@ function Modal({ closeModal }) {
         </div>
 
         {categories
-          .filter((category) => {
+          .filter(category => {
             if (searchTerm === "") {
               return category;
             } else if (
@@ -59,6 +59,7 @@ function Modal({ closeModal }) {
             ) {
               return category;
             }
+            return category
           })
           .map((category) => {
             return (

@@ -6,7 +6,7 @@ import Modal from "./Modal";
 function Campaign({ setEnable }) {
   const [showCategory, setShowCategory] = useState(false);
   const [categories, setCategories] = useState("Select categories");
-  const { appState, setAppState } = useContext(AppContext);
+  const { appState } = useContext(AppContext);
   const handleCategorySelect = (e) => {
     setShowCategory(!showCategory);
   };
