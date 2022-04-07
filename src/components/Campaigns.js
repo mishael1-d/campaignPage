@@ -41,6 +41,9 @@ function Campaings({ setAppState }) {
     }
   };
   const prevPage = () => {
+    if (page === 9) {
+      setPage((currentPage) => currentPage - 1);
+    }
     setPage((currentPage) => currentPage - 1);
     setEnable(true);
   };
@@ -60,7 +63,7 @@ function Campaings({ setAppState }) {
   return (
     <div className="campaign-section">
       {page===9 ? (
-        <Preview />
+        <Preview prevPage={prevPage}/>
       ) : (
         <div>
           {displayPage()}

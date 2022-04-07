@@ -13,7 +13,7 @@ function Campaign({ setEnable }) {
   const closeModal = () => {
     setShowCategory(false);
     setCategories(appState.categories.toString())
-    if (appState.categories.length > 0) {
+    if (appState.categories !== []) {
       setEnable(true)
     }
   }
