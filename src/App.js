@@ -14,12 +14,15 @@ function App() {
     followers: "",
     targetGender: "Select your gender",
     categories: [],
+    selected: []
   });
 
   const handleStateChange = (e) => {
     const name = e.target.name;
     const value = e.target.value;
-    setAppState({ ...appState, [name]: value });
+    let {...newState} = appState
+    newState[name]=value
+    setAppState(newState);
   };
   return (
     <>

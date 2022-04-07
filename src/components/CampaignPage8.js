@@ -22,7 +22,7 @@ function Campaign({ setEnable }) {
     <div className="audience-section">
       <h3 className="heading">Choose categories for your ptoduct</h3>
           <div className= {appState.categories.length > 0 ? "categories-value":"optionContainer"} onClick={handleCategorySelect} >
-            <p className="option-value">{categories}</p>
+            <p className="option-value">{appState.selected.toString()}</p>
             {appState.categories.length > 0 ? undefined : <img src={arrowDown} alt="" />}
           </div>
       {showCategory && <Modal closeModal={closeModal} />}

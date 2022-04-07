@@ -18,7 +18,7 @@ function Preview({ prevPage }) {
       <h6>Categories</h6>
       <div className="preview-categories">
         {appState.categories.map((category) => {
-          return <p>{category}</p>;
+          return <p key={category}>{category}</p>;
         })}
       </div>
       <h6>Minimum Followers</h6>
@@ -26,7 +26,7 @@ function Preview({ prevPage }) {
       <h6>Platform Required</h6>
       <div className="preview-categories">
         {appState.platform.map((platform) => {
-          return <p>{platform}</p>;
+          return <p key={platform}>{platform}</p>;
         })}
       </div>
     </div>

@@ -3,19 +3,29 @@ import React, { useContext, useState } from "react";
 import { AppContext } from "../App";
 import checkbox from "../assets/checkbox.png";
 function Modal({ closeModal }) {
-  const [select, setSelect] = useState(false);
   const [searchTerm, setSearchTerm] = useState("");
   const { appState, setAppState } = useContext(AppContext);
+  
+
   const handleSelect = (data, e) => {
-    setSelect(!select);
-    const { ...newData } = appState;
-    if (!appState.categories.includes(data)) {
+    let { ...newData } = appState;
+    
+    const exist = newData.selected.find((val) => val === data);
+    if (!exist) {
+      newData.selected.push(data);
+    } else {
+      const filtered = newData.selected.filter((val) => val !== data);
+      newData.selected=filtered
+    }
+    
+    if (!newData.categories.includes(data)) {
       newData.categories.push(data);
       setAppState(newData);
     } else {
-      setAppState(...newData);
+      setAppState(newData)
     }
   };
+
   const categories = [
     {
       name: "Category1",
@@ -52,7 +62,7 @@ function Modal({ closeModal }) {
         </div>
 
         {categories
-          .filter(category => {
+          .filter((category) => {
             if (searchTerm === "") {
               return category;
             } else if (
@@ -63,11 +73,15 @@ function Modal({ closeModal }) {
           })
           .map((category) => {
             return (
-              <div className="categories" key={category.name}>
-                <p onClick={(e) => handleSelect(category.name, e)}>
-                  {category.name}
-                </p>
-                {select && <img src={checkbox} alt="Selected" />}
+              <div
+                className="categories"
+                key={category.name}
+                onClick={(e) => handleSelect(category.name, e)}
+              >
+                <p>{category.name}</p>
+                {appState.selected.includes(category.name) && (
+                  <img src={checkbox} alt="Selected" />
+                )}
               </div>
             );
           })}
