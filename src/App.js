@@ -4,10 +4,13 @@ import Navbar from "./components/Navbar";
 import Campaigns from "./components/Campaigns";
 export const AppContext = React.createContext();
 function App() {
+  const [page, setPage] = useState(0);
+  const [enable, setEnable] = useState(false);
+  const [preview, setPreview] = useState(false);
   const [appState, setAppState] = useState({
     campaignName: "",
     campaignDescription: "",
-    campaignImage: "",
+    campaignImage: [],
     serviceOption: "",
     serviceDescription: "",
     platform: [],
@@ -16,18 +19,29 @@ function App() {
     categories: [],
     selected: []
   });
+  const prevPage = () => {
+    setPage((currentPage) => currentPage - 1);
+    setEnable(true);
+  };
+  const nextPage = () => {
+    setPage((currentPage) => currentPage + 1);
+    setEnable(false);
 
+    if (page === 9) {
+      setPreview(!preview);
+    }
+  };
   const handleStateChange = (e) => {
     const name = e.target.name;
     const value = e.target.value;
-    let {...newState} = appState
-    newState[name]=value
+    let {...newState} = appState;
+    newState[name]=value;
     setAppState(newState);
   };
   return (
     <>
       <Navbar />
-      <AppContext.Provider value={{ appState, handleStateChange, setAppState }}>
+      <AppContext.Provider value={{ appState, handleStateChange, setAppState, page, setPage, prevPage, nextPage, setEnable, enable }}>
         <Campaigns  />
       </AppContext.Provider>
     </>

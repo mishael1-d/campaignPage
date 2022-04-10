@@ -1,15 +1,20 @@
 import React, { useState, useContext } from "react";
 import { AppContext } from "../App";
+import Buttons from "./Buttons"
 function Campaign({ setEnable }) {
+  const { appState, setAppState, handleStateChange } = useContext(AppContext);
   const [activeOptionA, setActiveOptionA] = useState(false);
   const [activeOptionB, setActiveOptionB] = useState(false);
-  const state = useContext(AppContext);
 
-  if (
-    state.appState.serviceOption &&
-    state.appState.serviceDescription !== ""
-  ) {
+  const handleOnChange = (e) => {
+    const { ...newState } = appState;
+    newState.serviceDescription = e.target.value.replace(/\D/g, "");
+    setAppState(newState);
+  };
+  if (appState.serviceOption && appState.serviceDescription > 0) {
     setEnable(true);
+  } else {
+    setEnable(false)
   }
 
   const onOptionClickA = () => {
@@ -21,6 +26,7 @@ function Campaign({ setEnable }) {
     setActiveOptionA(false);
   };
   return (
+    <>
     <div className="servicePage">
       <h3 className="heading">Do You Want To:</h3>
       <div className="inputContainer">
@@ -36,13 +42,11 @@ function Campaign({ setEnable }) {
         {activeOptionA && (
           <div className="option-description">
             <h6>Describe your giveaway</h6>
-            <input
-              className="desc"
-              type="text"
+            <textarea
               placeholder="Describe here"
-              onChange={(e) => state.handleStateChange(e)}
-              value={state.appState.serviceOption}
-              name={Object.keys(state.appState)[3]}
+              onChange={(e) => handleStateChange(e)}
+              value={appState.serviceOption}
+              name={Object.keys(appState)[3]}
             />
           </div>
         )}
@@ -61,14 +65,17 @@ function Campaign({ setEnable }) {
             <input
               type="text"
               placeholder="$ Enter Price"
-              onChange={(e) => state.handleStateChange(e)}
-              value={state.appState.serviceDescription}
-              name={Object.keys(state.appState)[4]}
+              pattern="[0-9]*"
+              onChange={handleOnChange}
+              value={appState.serviceDescription}
+              name={Object.keys(appState)[4]}
             />
           </div>
         )}
       </div>
     </div>
+      <Buttons />
+      </>
   );
 }
 

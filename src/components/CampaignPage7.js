@@ -1,5 +1,6 @@
 import React, { useState, useContext } from "react";
 import {AppContext} from "../App"
+import Buttons from "./Buttons"
 import arrowDown from "../assets/arrow-down-black.png";
 function Campaign({setEnable}) {
   const [showGender, setShowGender] = useState(false);
@@ -16,6 +17,7 @@ const {appState, setAppState} = useContext(AppContext)
   };
 
   return (
+    <>
     <div className="audience-section">
       <h3 className="heading">Gender for your Target Audience</h3>
       <div
@@ -39,6 +41,8 @@ const {appState, setAppState} = useContext(AppContext)
         </div>
       )}
     </div>
+    <Buttons />
+    </>
   );
 }
 

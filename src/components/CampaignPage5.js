@@ -1,5 +1,6 @@
 import React, { useState, useContext } from "react";
 import { AppContext } from "../App";
+import Buttons from "./Buttons"
 
 function Campaign({ setEnable }) {
   const { appState, setAppState } = useContext(AppContext);
@@ -50,8 +51,9 @@ function Campaign({ setEnable }) {
   };
 
   return (
+    <>
     <div className="platformPage">
-      <h3 className="heading">Select the Platform</h3>
+      <h3 className="heading">Select the Platform:</h3>
       <div className="inputContainer">
         {platformOptions.map((option, index) => {
           return (
@@ -67,6 +69,8 @@ function Campaign({ setEnable }) {
         })}
       </div>
     </div>
+    <Buttons />
+    </>
   );
 }
 

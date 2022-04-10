@@ -6,7 +6,7 @@ function Preview({ prevPage }) {
   return (
     <div className="preview-container">
       <div className="preview-image">
-        <img src={appState.campaignImage} alt="" />
+        <img src={appState.campaignImage[0]} alt="" />
       </div>
       <button className="back-btn" onClick={prevPage}>
         Go Back
