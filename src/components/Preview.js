@@ -11,7 +11,7 @@ function Preview({ prevPage }) {
       <button className="back-btn" onClick={prevPage}>
         Go Back
       </button>
-      <h6>{appState.campaignName}</h6>
+      <h3>{appState.campaignName}</h3>
       <p>{appState.campaignDescription}</p>
       <h6>Description</h6>
       <p>{appState.campaignDescription}</p>
