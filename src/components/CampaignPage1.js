@@ -10,17 +10,17 @@ function Campaign() {
     setEnable(false)
   }
   return (
-    <div className="pageContainer">
+    <>
       <h3 className="heading">What's your campaign name?</h3>
       <input
         type="text"
-        placeholder="for e.g `Flytant collab"
+        placeholder="for e.g 'Flytant collab'"
         onChange={(e)=>handleStateChange(e)}
         value={appState.campaignName}
         name={Object.keys(appState)[0]}
       />
       <Buttons />
-    </div>
+    </>
   );
 }
 

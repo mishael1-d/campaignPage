@@ -14,8 +14,6 @@ body {
   height: 80px;
   width: 100%;
   padding: 10px 20px;
-  position: fixed;
-  top: 0;
   z-index: 1000;
 }
 .navbar .logo {
@@ -35,7 +33,7 @@ body {
   height: auto;
 }
 .campaign-section {
-  max-width: 600px;
+  max-width: 560px;
   height: calc(100% - 700px);
   position: absolute;
   top: 30%;
@@ -43,23 +41,21 @@ body {
 }
 .campaign-section h3 {
   width: 560px;
-  font-size: 24px;
+  font-size: 22px;
   font-weight: 600;
   margin-bottom: 16px;
-  /* font-family: "Poppins", sans-serif; */
 }
 .campaign-section h6 {
-  font-size: 20px;
-  /* font-family: "Poppins", sans-serif; */
+  font-size: 16px;
   margin: 10px 0;
 }
 .campaign-section input, .campaign-section textarea {
-  width: 100%;
+  width: 90%;
   background-color: #ffffff;
   border: 1px solid #000;
-  border-radius: 5px;
+  border-radius: 10px;
   box-sizing: border-box;
-  height: 50px;
+  height: 45px;
   padding: 10px;
   margin-bottom: 39px;
   font-size: 18px;
@@ -68,14 +64,10 @@ body {
   height: 120px;
   resize: none;
 }
-input[type="text"]::placeholder{
+input[type="text"]::placeholder, textarea::placeholder{
   font-family: "Poppins", sans-serif;
   font-size: 16px;
-}
-textarea::placeholder {
-  font-family: "Poppins", sans-serif;
-  font-size: 16px;
-
+  color: rgba(0,0,0,0.5)
 }
 .campaign-section .inactive {
   display: inline-flex;
@@ -85,11 +77,10 @@ textarea::placeholder {
   background: rgba(38, 36, 36, 0.5);
   color: #ffffff;
   border: none;
-  border-radius: 5px;
+  border-radius: 10px;
   outline: none;
   width: 150px;
   padding: 12px 15px;
-  /* font-family: "Poppins", sans-serif; */
   font-weight: 600;
   font-size: 17px;
   cursor: pointer;
@@ -101,11 +92,10 @@ textarea::placeholder {
   justify-content: center;
   color: #ffffff;
   border: none;
-  border-radius: 5px;
+  border-radius: 10px;
   outline: none;
   width: 150px;
   padding: 10px 15px;
-  /* font-family: "Poppins", sans-serif; */
   font-weight: 600;
   font-size: 15px;
   cursor: pointer;
@@ -117,12 +107,9 @@ textarea::placeholder {
   height: auto;
   margin-left: 10px;
 }
-.pageContainer {
-  height: calc(100vh - 80px)
-}
+
 .subtitle-container {
   margin-left: 10px;
-  /* font-family: "Poppins", sans-serif; */
   opacity: 0.5;
   font-size: 16px;
 }
@@ -158,9 +145,6 @@ textarea::placeholder {
 .arrow-btn-container img {
   width: 200%;
   height: auto;
-}
-.descPage input {
-  height: 100px !important;
 }
 .imagePage {
   display: flex;
@@ -214,28 +198,31 @@ textarea::placeholder {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 15px;
-  border-radius: 5px;
+  padding: 5px;
+  border-radius: 10px;
   border: 1px solid #000;
-  width: 350px;
-  height: 60px;
+  width: 320px;
+  height: 55px;
   max-width: 250px;
-  margin-top: 10px;
+  margin: 20px 0;
   cursor: pointer;
-  font-size: 16px;
+  font-size: 15px;
 }
 .optionContainer > p {
   color: #262424;
 }
 .option {
   border: 1px solid #000;
-  padding: 6px 10px;
+  padding: 5px 10px;
   margin: 10px;
   font-weight: 600;
   border-radius: 5px;
 }
 .option-description {
   margin: 20px 0;
+}
+.option-description textarea {
+  margin-bottom: 0;
 }
 .option-description .desc {
   height: 100px !important;
@@ -248,7 +235,6 @@ textarea::placeholder {
 .option-value {
   margin-right: auto;
   font-weight: 600;
-  /* font-family: "Poppins", sans-serif; */
 }
 .optionActive .option {
   border: 1px solid #fff;
@@ -262,15 +248,13 @@ textarea::placeholder {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 15px;
+  padding: 5px;
+  margin: 20px 0;
   border-radius: 10px;
-  width: 350px;
-  height: 60px;
+  width: 320px;
+  height: 55px;
   max-width: 250px;
-  margin-top: 10px;
-  /* font-family: "Poppins", sans-serif; */
   cursor: pointer;
-
   background-color: #000;
   color: #fff;
 }
@@ -294,13 +278,13 @@ textarea::placeholder {
   padding: 15px;
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
-  border: 2px solid #000;
-  width: 350px;
+  border: 1px solid #000;
+  width: 320px;
   max-width: 250px;
   font-weight: 600;
   border-top: none;
   position: relative;
-  top: -6px;
+  top: -27px;
 }
 .gender-list p {
   padding: 10px 0;

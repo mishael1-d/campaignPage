@@ -43,7 +43,7 @@ function Campaign() {
       {page === 9 ? (
         <Preview prevPage={prevPage} nextPage={nextPage} />
       ) : (
-        <div>{displayPage()}</div>
+        <>{displayPage()}</>
       )}
     </div>
   );
