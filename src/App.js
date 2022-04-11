@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import "./App.css";
 import Navbar from "./components/Navbar";
-// import Campaigns from "./components/Campaigns";
-import CampaignDetails from "./components/CampaignDetails";
+import Campaigns from "./components/Campaigns";
+// import CampaignDetails from "./components/CampaignDetails";
 export const AppContext = React.createContext();
 function App() {
   const [page, setPage] = useState(0);
@@ -43,8 +43,8 @@ function App() {
     <>
       <Navbar />
       <AppContext.Provider value={{ appState, handleStateChange, setAppState, page, setPage, prevPage, nextPage, setEnable, enable }}>
-        {/* <Campaigns  /> */}
-        <CampaignDetails />
+        <Campaigns  />
+        {/* <CampaignDetails /> */}
       </AppContext.Provider>
     </>
   );

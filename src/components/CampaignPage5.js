@@ -23,7 +23,7 @@ function Campaign({ setEnable }) {
     const { ...newData } = appState;
     newData.platform.push.toString(activeOption);
     setAppState(newData);
-    if (newData.platform.length > 0) {
+    if (activeOption.length > 0) {
       setEnable(true);
     }
 
