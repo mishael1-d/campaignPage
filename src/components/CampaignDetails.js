@@ -96,7 +96,7 @@ function CampaignDetails() {
           <img src={fb} alt="" srcset="" />
           <img src={linkVector} alt="" srcset="" />
         </div>
-        <h3 className="title">More related campaigns</h3>
+        {/* <h3 className="title">More related campaigns</h3> */}
         <div className="relatedC-images">
           <img src={rcImage} alt="" />
           <p className="rc-content">124 applied</p>
@@ -112,7 +112,7 @@ function CampaignDetails() {
           <img src={fb} alt="" srcset="" />
           <img src={linkVector} alt="" srcset="" />
         </div>
-        <h3 className="title">More related campaigns</h3>
+        {/* <h3 className="title">More related campaigns</h3> */}
         <div className="relatedC-images">
           <img src={rcImage} alt="" />
           <p className="rc-content">124 applied</p>

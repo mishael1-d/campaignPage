@@ -87,8 +87,8 @@ function Modal({ closeModal }) {
           })}
         <button
           type="submit"
-          className="search-btn"
-          onClick={() => closeModal()}
+          className={appState.selected.length > 0 ? "search-btn-active" : "search-btn-inactive"}
+          onClick= {() => closeModal()}
         >
           Done
         </button>

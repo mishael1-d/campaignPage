@@ -49,7 +49,8 @@ body {
   font-size: 16px;
   margin: 10px 0;
 }
-.campaign-section input, .campaign-section textarea {
+.campaign-section input,
+.campaign-section textarea {
   width: 90%;
   background-color: #ffffff;
   border: 1px solid #000;
@@ -59,20 +60,22 @@ body {
   padding: 10px;
   margin-bottom: 39px;
   font-size: 18px;
+  font-family: "Poppins", sans-serif;
 }
 .campaign-section textarea {
   width: 100%;
   height: 120px;
   resize: none;
 }
-input[type="text"]::placeholder, textarea::placeholder{
+input[type="text"]::placeholder,
+textarea::placeholder {
   font-family: "Poppins", sans-serif;
   font-size: 16px;
-  color: rgba(0,0,0,0.5)
+  color: rgba(0, 0, 0, 0.5);
 }
 .campaign-section .inactive {
   display: inline-flex;
-  flex: 50%;
+  flex: 50% 1;
   align-items: center;
   justify-content: center;
   background: rgba(38, 36, 36, 0.5);
@@ -81,9 +84,10 @@ input[type="text"]::placeholder, textarea::placeholder{
   border-radius: 5px;
   outline: none;
   width: 150px;
-  padding: 12px 15px;
-  font-weight: 600;
-  font-size: 17px;
+  padding: 5px 12px;
+  font-weight: 500;
+  font-family: "Poppins";
+  font-size: 16px;
   cursor: pointer;
 }
 .campaign-section .active {
@@ -97,7 +101,7 @@ input[type="text"]::placeholder, textarea::placeholder{
   outline: none;
   width: 150px;
   padding: 10px 15px;
-  font-weight: 600;
+  font-weight: 500;
   font-size: 15px;
   cursor: pointer;
   background-color: #000;
@@ -167,8 +171,8 @@ input[type="text"]::placeholder, textarea::placeholder{
   justify-content: center;
 }
 .addBtn {
-  width: 80px;
-  height: 80px;
+  width: 70px;
+  height: 60px;
   background: rgba(0, 0, 0, 0.2);
   display: flex;
   align-items: center;
@@ -177,8 +181,7 @@ input[type="text"]::placeholder, textarea::placeholder{
   margin-right: 20px;
   cursor: pointer;
 }
-.addBtn img {
-  width: 100%;
+.addBtn img {    width: 40px;
   cursor: pointer;
 }
 .image {
@@ -203,14 +206,15 @@ input[type="text"]::placeholder, textarea::placeholder{
   border-radius: 10px;
   border: 1px solid #000;
   width: 320px;
-  height: 55px;
-  max-width: 250px;
+  height: 45px;
+  max-width: 240px;
   margin: 20px 0;
   cursor: pointer;
   font-size: 15px;
 }
 .optionContainer > p {
   color: #262424;
+  padding: 10px;
 }
 .option {
   border: 1px solid #000;
@@ -243,6 +247,7 @@ input[type="text"]::placeholder, textarea::placeholder{
 .optionContainer img,
 .categories-value img {
   width: 10%;
+  margin: 10px;
 }
 
 .optionActive {
@@ -356,7 +361,7 @@ input[type="text"]::placeholder, textarea::placeholder{
   padding: 10px 0;
   cursor: pointer;
 }
-.search-btn {
+.search-btn-active {
   margin: 10px auto;
   text-align: center;
   width: 80%;
@@ -370,47 +375,74 @@ input[type="text"]::placeholder, textarea::placeholder{
   cursor: pointer;
   font-size: 18px;
 }
+.search-btn-inactive {
+  margin: 10px auto;
+  text-align: center;
+  width: 80%;
+  height: 40px;
+  padding: 10px;
+  display: block;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.7);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 18px;
+}
 .categories-value {
   width: -moz-fit-content !important;
   width: fit-content !important;
+  max-width: -moz-fit-content !important;
   max-width: fit-content !important;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 15px;
   border-radius: 10px;
-  border: 2px solid #000;
-  height: 50px;
+  border: 1px solid #000;
+  height: 45px;
   min-width: 250px;
   margin-top: 10px;
   cursor: pointer;
 }
 .preview-container {
   margin-bottom: 30px;
+  position: relative;
+  top: -20px;
+  left: -30%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.preview-container h3 {
+  font-weight: 600;
+  margin-top: 20px;
+  margin-bottom: 5px;
 }
 .preview-image {
-  width: 300px;
-  height: 200px;
+  width: 700px;
+  height: 500px;
 }
 .preview-image img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
+
 .preview-categories {
   display: flex;
 }
 .preview-categories p {
-  margin-right: 15px;
+  margin-right: 16px;
   background-color: rgba(38, 36, 36, 0.1);
   color: #000;
-  padding: 10px;
+  padding: 4px 12px;
   border-radius: 10px;
 }
 .back-btn {
-  position: relative;
-  top: -33px;
-  left: 430px;
+  width: 100px;
+  height: 35px;
+  margin-left: 100px;
   padding: 10px 20px;
   color: #fff;
   background-color: #262424;
@@ -420,7 +452,6 @@ input[type="text"]::placeholder, textarea::placeholder{
   cursor: pointer;
 }
 
-
 /* CAMPAIGN DETAILS PAGE */
 .campaignDetails {
   display: flex;
@@ -428,8 +459,8 @@ input[type="text"]::placeholder, textarea::placeholder{
   padding: 100px;
 }
 .left-container .campaignDetailsImage {
-  width: 600px;
-  height: 400px;
+  width: 700px;
+  height: 500px;
   margin-bottom: 25px;
 }
 .left-container .campaignDetailsImage img {
@@ -438,7 +469,7 @@ input[type="text"]::placeholder, textarea::placeholder{
   object-fit: cover;
 }
 .details-content {
-  max-width: 600px;
+  max-width: 700px;
 }
 .details-content h3 {
   font-weight: 600;
@@ -447,17 +478,18 @@ input[type="text"]::placeholder, textarea::placeholder{
 .details-content .date-created {
   color: rgba(0, 0, 0, 0.7);
   font-weight: 500;
-  font-size: 16px;
+  font-size: 12px;
 }
 .details-content .campaign-type {
-  background-color: #3FD5F5;
+  background-color: #3fd5f5;
   color: #000;
   font-weight: 500;
-  font-size: 13px;
+  font-family: "Poppins", sans-serif;
+  font-size: 12px;
   text-align: center;
   border: none;
   outline: none;
-  padding: 13px 25px;
+  padding: 4px 12px;
   border-radius: 25px;
   margin: 30px 0;
 }
@@ -466,23 +498,25 @@ input[type="text"]::placeholder, textarea::placeholder{
   margin-bottom: 30px;
 }
 .actionBtns .btn-secondary {
-  width: 220px;
-  font-size: 18px;
-  font-weight: 600;
+  width: 200px;
+  font-size: 16px;
+  font-weight: 500;
+  font-family: "Poppins";
   background: none;
   outline: none;
   border: 1px solid black;
   border-radius: 25px;
-  padding: 13px 60px;
+  padding: 8px 29px;
   margin-right: 50px;
   cursor: pointer;
 }
 .actionBtns .btn-primary {
-  width: 220px;
+  width: 200px;
   border-radius: 25px;
-  padding: 13px 60px;
-  font-size: 18px;
-  font-weight: 600;
+  padding: 8px 29px;
+  font-size: 16px;
+  font-weight: 500;
+  font-family: "Poppins";
   border: none;
   outline: none;
   color: #fff;
@@ -493,25 +527,27 @@ input[type="text"]::placeholder, textarea::placeholder{
   color: rgba(0, 0, 0, 0.7);
   font-size: 16px;
   font-weight: 500;
-  max-width: 550px;
+  max-width: 650px;
   margin-bottom: 30px;
 }
-.cate, .followers-section, rPlatform {
+.cate,
+.followers-section,
+.rPlatform {
   margin-top: 30px !important;
-  margin-bottom: 30px !important;
+  margin-bottom: 20px !important;
 }
 .categories-section span {
-  background: #2624241A;
+  background: #2624241a;
   color: #000;
   width: 90px;
   font-weight: 600;
-  font-size: 15px;
+  font-size: 12px;
   padding: 10px 20px;
   border-radius: 50px;
   margin-right: 20px;
   margin-bottom: 20px;
 }
-.followers-section .content{
+.followers-section .content {
   font-weight: 600;
 }
 
@@ -519,7 +555,6 @@ input[type="text"]::placeholder, textarea::placeholder{
   display: flex;
   align-items: center;
   margin-top: 20px;
-
 }
 .sm-links {
   margin-right: 25px;
@@ -538,7 +573,7 @@ input[type="text"]::placeholder, textarea::placeholder{
 }
 .right-container h3 {
   font-weight: 600;
-  margin-bottom: 5px;
+  margin-bottom: 10px;
 }
 .relatedC-images {
   width: 300px;
@@ -555,13 +590,13 @@ input[type="text"]::placeholder, textarea::placeholder{
 .rc-content {
   width: fit-content;
   position: relative;
-  top: -210px;
+  top: -257px;
   left: 186px;
-  background-color: #F5B63A;
+  background-color: #f5b63a;
   color: #fff;
   border-top-left-radius: 10px;
   border-bottom-left-radius: 10px;
-  padding: 5px 12px;
+  padding: 4px 12px;
 }
 .rc-text {
   display: flex;
@@ -571,24 +606,43 @@ input[type="text"]::placeholder, textarea::placeholder{
   font-weight: 600;
 }
 .rc-paid {
-  background-color: #FFDE2F;
+  background-color: #ffde2f;
   border-radius: 25px;
-  padding: 10px 20px;
+  padding: 4px 12px;
+  font-size: 12px;
+  width: -moz-fit-content;
   width: fit-content;
   margin-right: auto;
 }
 .rc-date {
-margin-left: auto !important;
+  margin-left: auto !important;
+  font-size: 12px !important;
+  font-family: "Poppins";
+  font-weight: 500;
 }
 .small-content {
   font-size: 14px;
   font-weight: 600;
-  color: #000000B2;
-margin-bottom: 10px;
+  color: #000000b2;
+  margin-bottom: 10px;
 }
 .rc-sm-icons img {
-margin-right: 15px;
+  margin-right: 15px;
+  width: 18px;
+  height: 18px;
 }
 .rc-sm-icons {
   margin-bottom: 30px;
+}
+
+/* WARNINGS SECTION */
+.warning {
+  margin: 10px 0;
+  color: rgb(184, 43, 43);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Poppins";
+  font-size: 16px;
+  font-weight: 500;
 }

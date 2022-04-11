@@ -3,6 +3,7 @@ import "./App.css";
 import Navbar from "./components/Navbar";
 import Campaigns from "./components/Campaigns";
 // import CampaignDetails from "./components/CampaignDetails";
+// import Preview from "./components/Preview"
 export const AppContext = React.createContext();
 function App() {
   const [page, setPage] = useState(0);
@@ -45,6 +46,7 @@ function App() {
       <AppContext.Provider value={{ appState, handleStateChange, setAppState, page, setPage, prevPage, nextPage, setEnable, enable }}>
         <Campaigns  />
         {/* <CampaignDetails /> */}
+        {/* <Preview /> */}
       </AppContext.Provider>
     </>
   );

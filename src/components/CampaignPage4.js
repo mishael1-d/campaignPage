@@ -1,6 +1,7 @@
 import React, { useState, useContext } from "react";
 import { AppContext } from "../App";
 import Buttons from "./Buttons"
+import Warnings from "./Warnings";
 function Campaign({ setEnable }) {
   const { appState, setAppState, handleStateChange } = useContext(AppContext);
   const [activeOptionA, setActiveOptionA] = useState(false);
@@ -70,6 +71,7 @@ function Campaign({ setEnable }) {
               value={appState.serviceDescription}
               name={Object.keys(appState)[4]}
             />
+            <Warnings />
           </div>
         )}
       </div>
