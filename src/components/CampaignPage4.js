@@ -1,7 +1,7 @@
 import React, { useState, useContext } from "react";
 import { AppContext } from "../App";
 import Buttons from "./Buttons"
-// import Warnings from "./Warnings";
+import Warnings from "./Warnings";
 function CampaignPage4({ setEnable }) {
   const { appState, setAppState } = useContext(AppContext);
   const [activeOptionA, setActiveOptionA] = useState(false);
@@ -21,7 +21,7 @@ function CampaignPage4({ setEnable }) {
  
   const handleOnDescChange = (e) => {
     const { ...newState } = appState;
-    newState.serviceDescription = e.target.value.replace(/\D/g, "")
+    newState.serviceDescription = e.target.value.replace(/\D/g, "");
     
     if (newState.serviceDescription > 0) {
       setEnable(true);
@@ -83,10 +83,10 @@ function CampaignPage4({ setEnable }) {
               placeholder="$ Enter Price"
               pattern="[0-9]*"
               onChange={(e)=>handleOnDescChange(e)}
-              value={appState.serviceDescription}
+              value={`$${appState.serviceDescription}`}
               name={Object.keys(appState)[4]}
             />
-            {/* <Warnings /> */}
+            <Warnings />
           </div>
         )}
       </div>
