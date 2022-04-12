@@ -56,11 +56,8 @@ function App() {
     let { ...newState } = appState;
     newState[name] = value;
     setAppState(newState);
-    if (appState.campaignName !== "") {
-      setEnable(true);
-    } else {
-      setEnable(false);
-    }
+
+   
     if (appState.campaignDescription !== "") {
       setEnable(true);
     } else {
