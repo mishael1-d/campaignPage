@@ -2,14 +2,10 @@ import React, { useContext } from "react";
 import addBtn from "../assets/plus.png";
 import { AppContext } from "../App";
 import Buttons from "./Buttons"
-function Campaign() {
+function CampaignPage3() {
   const { appState, setAppState,setEnable } = useContext(AppContext);
 
-  if (appState.campaignImage.length > 0) {
-    setEnable(true);
-  } else {
-    setEnable(false);
-  }
+  
   const onFileChange = (e) => {
     const reader = new FileReader();
     reader.onload = () => {
@@ -46,4 +42,4 @@ function Campaign() {
   );
 }
 
-export default Campaign;
+export default CampaignPage3;

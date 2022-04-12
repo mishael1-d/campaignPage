@@ -2,7 +2,7 @@ import React, { useState, useContext } from "react";
 import {AppContext} from "../App"
 import Buttons from "./Buttons"
 import arrowDown from "../assets/arrow-down-black.png";
-function Campaign({setEnable}) {
+function CampaignPage7({setEnable}) {
   const [showGender, setShowGender] = useState(false);
   // const [gender, setGender] = useState("Select your gender");
 const {appState, setAppState} = useContext(AppContext)
@@ -46,4 +46,4 @@ const {appState, setAppState} = useContext(AppContext)
   );
 }
 
-export default Campaign;
+export default CampaignPage7;

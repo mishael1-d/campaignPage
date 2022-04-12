@@ -1,7 +1,7 @@
 import React, {useContext} from "react";
 import {AppContext} from "../App"
 import Buttons from "./Buttons"
-function Campaign() {
+function CampaignPage9() {
   const {appState, nextPage} = useContext(AppContext)
   console.log(appState)
   return (
@@ -15,4 +15,4 @@ function Campaign() {
   );
 }
 
-export default Campaign;
+export default CampaignPage9;

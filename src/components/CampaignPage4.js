@@ -2,7 +2,7 @@ import React, { useState, useContext } from "react";
 import { AppContext } from "../App";
 import Buttons from "./Buttons"
 import Warnings from "./Warnings";
-function Campaign({ setEnable }) {
+function CampaignPage4({ setEnable }) {
   const { appState, setAppState, handleStateChange } = useContext(AppContext);
   const [activeOptionA, setActiveOptionA] = useState(false);
   const [activeOptionB, setActiveOptionB] = useState(false);
@@ -12,11 +12,7 @@ function Campaign({ setEnable }) {
     newState.serviceDescription = e.target.value.replace(/\D/g, "");
     setAppState(newState);
   };
-  if (appState.serviceOption && appState.serviceDescription > 0) {
-    setEnable(true);
-  } else {
-    setEnable(false)
-  }
+ 
 
   const onOptionClickA = () => {
     setActiveOptionA(!activeOptionA);
@@ -81,4 +77,4 @@ function Campaign({ setEnable }) {
   );
 }
 
-export default Campaign;
+export default CampaignPage4;

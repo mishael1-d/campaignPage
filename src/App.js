@@ -22,6 +22,7 @@ const useOnEnterKeyPress = (key, cb) => {
 };
 function App() {
   const [page, setPage] = useState(0);
+  const [addClass, setAddClass] = useState("");
   const [enable, setEnable] = useState(false);
   const [preview, setPreview] = useState(false);
   const [appState, setAppState] = useState({
@@ -38,12 +39,13 @@ function App() {
   });
   const prevPage = () => {
     setPage((currentPage) => currentPage - 1);
+    setAddClass("prev-page-active");
     setEnable(true);
   };
   const nextPage = () => {
     setPage((currentPage) => currentPage + 1);
+    setAddClass("next-page-active");
     setEnable(false);
-
     if (page === 9) {
       setPreview(!preview);
     }
@@ -54,9 +56,38 @@ function App() {
     let { ...newState } = appState;
     newState[name] = value;
     setAppState(newState);
+    if (appState.campaignName !== "") {
+      setEnable(true);
+    } else {
+      setEnable(false);
+    }
+    if (appState.campaignDescription !== "") {
+      setEnable(true);
+    } else {
+      setEnable(false);
+    }
+    if (appState.campaignImage.length > 0) {
+      setEnable(true);
+    } else {
+      setEnable(false);
+    }
+    if (appState.serviceOption && appState.serviceDescription > 0) {
+      setEnable(true);
+    } else {
+      setEnable(false);
+    }
+    if (appState.followers !== "") {
+      setEnable(true);
+    } else {
+      setEnable(false);
+    }
+    if (appState.selected.length > 0) {
+      setEnable(true);
+    } else {
+      setEnable(false);
+    }
   };
 
-  
   return (
     <>
       <Navbar />
@@ -71,7 +102,8 @@ function App() {
           nextPage,
           setEnable,
           enable,
-          useOnEnterKeyPress
+          useOnEnterKeyPress,
+          addClass,
         }}
       >
         <Campaigns />

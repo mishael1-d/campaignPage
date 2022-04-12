@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { AppContext } from "../App";
 import Buttons from "./Buttons"
 
-function Campaign({ setEnable }) {
+function CampaignPage6({ setEnable }) {
   const { appState, setAppState } = useContext(AppContext);
   const state = useContext(AppContext);
   
@@ -11,11 +11,7 @@ function Campaign({ setEnable }) {
     newState.followers = e.target.value.replace(/\D/g, "");
     setAppState(newState);
   };
-  if (appState.followers !== "") {
-    setEnable(true);
-  } else {
-    setEnable(false);
-  }
+  
   return (
     <>
       <h3 className="heading">Minimum Followers</h3>
@@ -31,4 +27,4 @@ function Campaign({ setEnable }) {
   );
 }
 
-export default Campaign;
+export default CampaignPage6;

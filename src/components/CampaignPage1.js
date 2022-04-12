@@ -2,15 +2,11 @@ import React, { useContext } from "react";
 import { AppContext } from "../App";
 import Buttons from "./Buttons"
 
-function Campaign() {
-  const {appState, setEnable, handleStateChange} = useContext(AppContext);
-  if (appState.campaignName !== "") {
-    setEnable(true);
-  } else {
-    setEnable(false)
-  }
+function CampaignPage1({setEnable}) {
+  const {appState, handleStateChange, addClass} = useContext(AppContext);
+  
   return (
-    <div className="page-inactive">
+    <div className={`page-inactive ${addClass}`}>
       <h3 className="heading">What's your campaign name?</h3>
       <input
         type="text"
@@ -24,4 +20,4 @@ function Campaign() {
   );
 }
 
-export default Campaign;
+export default CampaignPage1;

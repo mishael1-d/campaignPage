@@ -2,7 +2,7 @@ import React, { useState, useContext } from "react";
 import { AppContext } from "../App";
 import Buttons from "./Buttons"
 
-function Campaign({ setEnable }) {
+function CampaignPage5({ setEnable }) {
   const { appState, setAppState } = useContext(AppContext);
 
   const [activeOption, setActiveOption] = useState([])
@@ -76,4 +76,4 @@ function Campaign({ setEnable }) {
   );
 }
 
-export default Campaign;
+export default CampaignPage5;

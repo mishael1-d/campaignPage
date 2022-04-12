@@ -12,7 +12,7 @@ import CampaignPage8 from "./CampaignPage8";
 import CampaignPage9 from "./CampaignPage9";
 import Preview from "./Preview";
 
-function Campaign() {
+function Campaigns() {
   const { setEnable, page, nextPage, prevPage } = useContext(AppContext);
   // const displayPage = () => {
   //   if (page === 0) {
@@ -60,4 +60,4 @@ function Campaign() {
   );
 }
 
-export default Campaign;
+export default Campaigns;

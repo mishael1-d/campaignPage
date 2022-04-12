@@ -1,13 +1,8 @@
 import React, { useContext } from "react";
 import { AppContext } from "../App";
 import Buttons from "./Buttons"
-function Campaign() {
+function CampaignPage2() {
   const {appState, setEnable, handleStateChange} = useContext(AppContext);
-  if (appState.campaignDescription !== "") {
-    setEnable(true);
-  }else {
-    setEnable(false)
-  }
   return (
     <div className="descPage">
       <h3 className="heading">What's your campaign description?</h3>
@@ -22,4 +17,4 @@ function Campaign() {
   );
 }
 
-export default Campaign;
+export default CampaignPage2;
