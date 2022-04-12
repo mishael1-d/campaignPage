@@ -1,10 +1,25 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import "./App.css";
 import Navbar from "./components/Navbar";
 import Campaigns from "./components/Campaigns";
 // import CampaignDetails from "./components/CampaignDetails";
 // import Preview from "./components/Preview"
 export const AppContext = React.createContext();
+const useOnEnterKeyPress = (key, cb) => {
+  const callbackRef = useRef(cb);
+  useEffect(() => {
+    callbackRef.current = cb;
+  });
+  useEffect(() => {
+    function handle(e) {
+      if (e.code === key) {
+        callbackRef.current(e);
+      }
+    }
+    document.addEventListener("keypress", handle);
+    return () => document.removeEventListener("keypress", handle);
+  }, [key]);
+};
 function App() {
   const [page, setPage] = useState(0);
   const [enable, setEnable] = useState(false);
@@ -19,7 +34,7 @@ function App() {
     followers: "",
     targetGender: "Select your gender",
     categories: [],
-    selected: []
+    selected: [],
   });
   const prevPage = () => {
     setPage((currentPage) => currentPage - 1);
@@ -36,15 +51,30 @@ function App() {
   const handleStateChange = (e) => {
     const name = e.target.name;
     const value = e.target.value;
-    let {...newState} = appState;
-    newState[name]=value;
+    let { ...newState } = appState;
+    newState[name] = value;
     setAppState(newState);
   };
+
+  
   return (
     <>
       <Navbar />
-      <AppContext.Provider value={{ appState, handleStateChange, setAppState, page, setPage, prevPage, nextPage, setEnable, enable }}>
-        <Campaigns  />
+      <AppContext.Provider
+        value={{
+          appState,
+          handleStateChange,
+          setAppState,
+          page,
+          setPage,
+          prevPage,
+          nextPage,
+          setEnable,
+          enable,
+          useOnEnterKeyPress
+        }}
+      >
+        <Campaigns />
         {/* <CampaignDetails /> */}
         {/* <Preview /> */}
       </AppContext.Provider>

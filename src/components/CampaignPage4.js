@@ -71,7 +71,7 @@ function Campaign({ setEnable }) {
               value={appState.serviceDescription}
               name={Object.keys(appState)[4]}
             />
-            <Warnings />
+            {/* <Warnings /> */}
           </div>
         )}
       </div>

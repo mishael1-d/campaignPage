@@ -10,7 +10,7 @@ function Campaign() {
     setEnable(false)
   }
   return (
-    <>
+    <div className="page-inactive">
       <h3 className="heading">What's your campaign name?</h3>
       <input
         type="text"
@@ -20,7 +20,7 @@ function Campaign() {
         name={Object.keys(appState)[0]}
       />
       <Buttons />
-    </>
+    </div>
   );
 }
 

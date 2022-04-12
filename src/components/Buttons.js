@@ -5,7 +5,8 @@ import arrowUp from "../assets/arrow-up.png";
 import arrowDown from "../assets/arrow-down.png";
 
 function Buttons() {
-  const {  prevPage, nextPage, page, enable } = useContext(AppContext);
+  const { setPage, prevPage, nextPage, page, enable, useOnEnterKeyPress } =
+    useContext(AppContext);
   // const handleDone = () => {
   //   setAppState({
   //     campaignName: "",
@@ -20,13 +21,17 @@ function Buttons() {
   //     selected: []
   //   });
   // };
+  const handleEnter = () => {
+    if (enable) {
+      setPage((currentPage) => currentPage + 1);
+    }
+  };
+  
+  useOnEnterKeyPress("Enter", handleEnter)
   return (
     <div>
       {page !== 8 && (
-        <button
-          disabled={!enable}
-          className={!enable ? "inactive" : "active"}
-        >
+        <button disabled={!enable} className={!enable ? "inactive" : "active"}>
           Done{" "}
           <span>
             <img src={tick} alt="" />
