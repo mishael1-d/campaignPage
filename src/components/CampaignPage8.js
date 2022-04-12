@@ -32,8 +32,12 @@ function CampaignPage8({ setEnable }) {
           }
           onClick={handleCategorySelect}
         >
-          <p className="option-value">{appState.selected.toString()}</p>
-          {appState.selected.length > 0 ? undefined : (
+          <p className="option-value">{
+            // appState.categories === "" ?
+             categories
+              // :appState.selected.toString()
+          }</p>
+          {appState.categories.length > 0 ? undefined : (
             <img src={arrowDown} alt="" />
           )}
         </div>

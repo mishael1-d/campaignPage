@@ -32,7 +32,7 @@ function Buttons() {
   return (
     <div>
       {page !== 8 && (
-        <button disabled={!enable} className={!enable ? "inactive" : "active"}>
+        <button disabled={!enable} className={!enable ? "inactive" : "active"} onClick={nextPage}>
           Done{" "}
           <span>
             <img src={tick} alt="" />

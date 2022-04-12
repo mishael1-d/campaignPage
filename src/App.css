@@ -152,6 +152,12 @@ textarea::placeholder {
   margin-top: 30px;
   display: flex;
 }
+.bottom {
+  position: absolute;
+  right: 0;
+  margin-top: 150px;
+  display: flex;
+}
 .arrow-btn-container .active,
 .arrow-btn-container .inactive {
   width: 40px;
@@ -296,6 +302,9 @@ textarea::placeholder {
 }
 .audience-section {
   margin-bottom: 39px;
+}
+.submit-section {
+  margin-bottom: 200px;
 }
 .preview {
   background: none !important;
@@ -469,16 +478,17 @@ textarea::placeholder {
   border-radius: 10px;
 }
 .back-btn {
-  width: 100px;
-  height: 35px;
-  margin-left: 100px;
+  width: 120px;
+  height: 40px;
+  margin-left: 150px;
   padding: 10px 20px;
   color: #fff;
   background-color: #262424;
   border: none;
   border-radius: 5px;
   font-family: 'Poppins';
-  font-size: 12px;
+  font-weight: 600;
+  font-size: 16px;
   outline: none;
   cursor: pointer;
 }
@@ -490,7 +500,7 @@ textarea::placeholder {
   /* position: relative;
   top: -20px;
   left: -30%; */
-  padding: 100px;
+  padding: 100px 130px;
 }
 .left-container .campaignDetailsImage {
   width: 700px;
