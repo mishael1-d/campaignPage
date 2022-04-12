@@ -1,9 +1,9 @@
 import React, { useState, useContext } from "react";
 import { AppContext } from "../App";
 import Buttons from "./Buttons"
-import Warnings from "./Warnings";
+// import Warnings from "./Warnings";
 function CampaignPage4({ setEnable }) {
-  const { appState, setAppState, handleStateChange } = useContext(AppContext);
+  const { appState, setAppState } = useContext(AppContext);
   const [activeOptionA, setActiveOptionA] = useState(false);
   const [activeOptionB, setActiveOptionB] = useState(false);
 

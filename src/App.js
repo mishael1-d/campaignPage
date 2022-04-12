@@ -24,7 +24,6 @@ function App() {
   const [page, setPage] = useState(0);
   const [addClass, setAddClass] = useState("");
   const [enable, setEnable] = useState(false);
-  const [preview, setPreview] = useState(false);
   const [appState, setAppState] = useState({
     campaignName: "",
     campaignDescription: "",
@@ -46,9 +45,6 @@ function App() {
     setPage((currentPage) => currentPage + 1);
     setAddClass("next-page-active");
     setEnable(false);
-    // if (page === 9) {
-    //   setPreview(!preview);
-    // }
   };
   const lastPage =()=>{
     setPage((currentPage) => currentPage + 2);
