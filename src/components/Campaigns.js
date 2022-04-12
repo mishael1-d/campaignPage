@@ -11,6 +11,7 @@ import CampaignPage7 from "./CampaignPage7";
 import CampaignPage8 from "./CampaignPage8";
 import CampaignPage9 from "./CampaignPage9";
 import Preview from "./Preview";
+import CampaignDetails from "./CampaignDetails";
 
 function Campaigns() {
   const { setEnable, page, nextPage, prevPage } = useContext(AppContext);
@@ -33,30 +34,27 @@ function Campaigns() {
       return <CampaignPage8 setEnable={setEnable} />;
     } else if (page === 8) {
       return <CampaignPage9 setEnable={setEnable} />;
-    } else if (page === 9){
-      return <Preview setEnable={setEnable} />
+    } else if (page === 9) {
+      return (
+        <Preview
+          setEnable={setEnable}
+          prevPage={prevPage}
+          nextPage={nextPage}
+        />
+      );
+    } else if (page === 10) {
+      return <CampaignDetails setEnable={setEnable} />;
     }
   };
 
   return (
-    <div className="campaign-section">
-      {page === 9 ? (
-        <Preview prevPage={prevPage} nextPage={nextPage} />
+    <>
+      {page === 10 ? (
+        <CampaignDetails />
       ) : (
-        <>
-          {displayPage()}
-          {/* <CampaignPage1 setEnable={setEnable} />
-          <CampaignPage2 setEnable={setEnable} />
-          <CampaignPage3 setEnable={setEnable} />
-          <CampaignPage4 setEnable={setEnable} />
-          <CampaignPage5 setEnable={setEnable} />
-          <CampaignPage6 setEnable={setEnable} />
-          <CampaignPage7 setEnable={setEnable} />
-          <CampaignPage8 setEnable={setEnable} />
-          <CampaignPage9 setEnable={setEnable} /> */}
-        </>
+        <div className="campaign-section"> {displayPage()}</div>
       )}
-    </div>
+    </>
   );
 }
 

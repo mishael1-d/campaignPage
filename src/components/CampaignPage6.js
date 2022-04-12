@@ -9,6 +9,11 @@ function CampaignPage6({ setEnable }) {
   const handleOnChange = (e) => {
     let { ...newState } = appState;
     newState.followers = e.target.value.replace(/\D/g, "");
+    if (newState.followers !== "") {
+      setEnable(true);
+    } else {
+      setEnable(false);
+    }
     setAppState(newState);
   };
   

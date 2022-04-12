@@ -10,9 +10,14 @@ function CampaignPage3() {
     const reader = new FileReader();
     reader.onload = () => {
       if (reader.readyState === 2) {
-        const { ...newData } = appState;
-        newData.campaignImage.push(reader.result);
-        setAppState(newData);
+        const { ...newImage } = appState;
+        newImage.campaignImage.push(reader.result);
+        if (newImage.campaignImage.length > 0) {
+          setEnable(true);
+        } else {
+          setEnable(false);
+        }
+        setAppState(newImage);
       }
     };
     reader.readAsDataURL(e.target.files[0]);

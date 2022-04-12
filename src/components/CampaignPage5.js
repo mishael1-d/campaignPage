@@ -8,25 +8,32 @@ function CampaignPage5({ setEnable }) {
   const [activeOption, setActiveOption] = useState([])
   
   const handleSelect = (data) => {
-    const newOptions = [...activeOption]
-   const exist = newOptions.find((val)=>val === data)
-   if(!exist){
-    newOptions.push(data)
-    setActiveOption(newOptions)
-    console.log(newOptions)
-  } 
-  else {
-    const filtered = newOptions.filter((val)=>val !== data)
-    setActiveOption(filtered)
-    console.log(filtered)
-   }
-    const { ...newData } = appState;
-    newData.platform.push.toString(activeOption);
-    setAppState(newData);
-    if (activeOption.length > 0) {
-      setEnable(true);
+    const { ...newOptions } = appState;
+    newOptions.platform = [...activeOption]
+    const exist = newOptions.platform.find((val)=>val === data)
+    if(!exist){
+      newOptions.platform.push(data)
+      setActiveOption(newOptions.platform)
+      console.log(newOptions.platform)
+      setAppState(newOptions);
+      //  const { ...newData } = appState;
+      //  newData.platform.push(activeOption).toString();
+    } 
+    else {
+      const filtered = newOptions.platform.filter((val)=>val !== data)
+      newOptions.platform.pop(filtered.toString())
+      setActiveOption(filtered)
+      console.log(filtered.toString())
+      setAppState(activeOption)
+      // const { ...newData } = appState;
+      // setAppState(newData);
     }
-
+    if (newOptions.platform.length > 0) {
+      setEnable(true);
+    } else {
+      setEnable(false)
+    }
+    
   };
   const platformOptions = [
     {

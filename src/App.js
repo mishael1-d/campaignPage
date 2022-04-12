@@ -46,43 +46,22 @@ function App() {
     setPage((currentPage) => currentPage + 1);
     setAddClass("next-page-active");
     setEnable(false);
-    if (page === 9) {
-      setPreview(!preview);
-    }
+    // if (page === 9) {
+    //   setPreview(!preview);
+    // }
   };
+  const lastPage =()=>{
+    setPage((currentPage) => currentPage + 2);
+    setAddClass("next-page-active");
+    setEnable(false);
+  }
   const handleStateChange = (e) => {
     const name = e.target.name;
     const value = e.target.value;
     let { ...newState } = appState;
     newState[name] = value;
     setAppState(newState);
-
    
-    if (appState.campaignDescription !== "") {
-      setEnable(true);
-    } else {
-      setEnable(false);
-    }
-    if (appState.campaignImage.length > 0) {
-      setEnable(true);
-    } else {
-      setEnable(false);
-    }
-    if (appState.serviceOption && appState.serviceDescription > 0) {
-      setEnable(true);
-    } else {
-      setEnable(false);
-    }
-    if (appState.followers !== "") {
-      setEnable(true);
-    } else {
-      setEnable(false);
-    }
-    if (appState.selected.length > 0) {
-      setEnable(true);
-    } else {
-      setEnable(false);
-    }
   };
 
   return (
@@ -101,6 +80,7 @@ function App() {
           enable,
           useOnEnterKeyPress,
           addClass,
+          lastPage
         }}
       >
         <Campaigns />

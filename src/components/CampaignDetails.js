@@ -108,9 +108,9 @@ function CampaignDetails() {
         <h3 className="title">Cresent treasures</h3>
         <p className="small-content">Min 5k followers required</p>
         <div className="rc-sm-icons">
-          <img src={insta} alt="" srcset="" />
-          <img src={fb} alt="" srcset="" />
-          <img src={linkVector} alt="" srcset="" />
+          <img src={insta} alt="" />
+          <img src={fb} alt="" />
+          <img src={linkVector} alt="" />
         </div>
         {/* <h3 className="title">More related campaigns</h3> */}
         <div className="relatedC-images">
@@ -124,9 +124,9 @@ function CampaignDetails() {
         <h3 className="title">Cresent treasures</h3>
         <p className="small-content">Min 5k followers required</p>
         <div className="rc-sm-icons">
-          <img src={insta} alt="" srcset="" />
-          <img src={fb} alt="" srcset="" />
-          <img src={linkVector} alt="" srcset="" />
+          <img src={insta} alt="" />
+          <img src={fb} alt="" />
+          <img src={linkVector} alt="" />
         </div>
       </div>
     </div>

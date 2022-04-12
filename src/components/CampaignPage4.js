@@ -7,13 +7,32 @@ function CampaignPage4({ setEnable }) {
   const [activeOptionA, setActiveOptionA] = useState(false);
   const [activeOptionB, setActiveOptionB] = useState(false);
 
-  const handleOnChange = (e) => {
+  const handleOnOptionChange = (e) => {
     const { ...newState } = appState;
-    newState.serviceDescription = e.target.value.replace(/\D/g, "");
+    newState.serviceOption = e.target.value
+    
+    if (newState.serviceOption) {
+      setEnable(true);
+    } else {
+      setEnable(false);
+    }
+    setAppState(newState);
+  };
+ 
+  const handleOnDescChange = (e) => {
+    const { ...newState } = appState;
+    newState.serviceDescription = e.target.value.replace(/\D/g, "")
+    
+    if (newState.serviceDescription > 0) {
+      setEnable(true);
+    } else {
+      setEnable(false);
+    }
     setAppState(newState);
   };
  
 
+  ;
   const onOptionClickA = () => {
     setActiveOptionA(!activeOptionA);
     setActiveOptionB(false);
@@ -41,7 +60,7 @@ function CampaignPage4({ setEnable }) {
             <h6>Describe your giveaway</h6>
             <textarea
               placeholder="Describe here"
-              onChange={(e) => handleStateChange(e)}
+              onChange={(e) => handleOnOptionChange(e)}
               value={appState.serviceOption}
               name={Object.keys(appState)[3]}
             />
@@ -63,7 +82,7 @@ function CampaignPage4({ setEnable }) {
               type="text"
               placeholder="$ Enter Price"
               pattern="[0-9]*"
-              onChange={handleOnChange}
+              onChange={(e)=>handleOnDescChange(e)}
               value={appState.serviceDescription}
               name={Object.keys(appState)[4]}
             />

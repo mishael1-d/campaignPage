@@ -9,7 +9,10 @@ function CampaignPage8({ setEnable }) {
   const [showCategory, setShowCategory] = useState(false);
   const [categories, setCategories] = useState("Select categories");
   const { appState } = useContext(AppContext);
-  const handleCategorySelect = (e) => {
+  const handleCategorySelect = () => {
+    if (appState.categories !== "") {
+      setEnable(true)
+    }
     setShowCategory(!showCategory);
   };
   const closeModal = () => {
@@ -30,7 +33,7 @@ function CampaignPage8({ setEnable }) {
           onClick={handleCategorySelect}
         >
           <p className="option-value">{appState.selected.toString()}</p>
-          {appState.categories.length > 0 ? undefined : (
+          {appState.selected.length > 0 ? undefined : (
             <img src={arrowDown} alt="" />
           )}
         </div>

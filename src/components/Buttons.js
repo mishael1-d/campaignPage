@@ -5,7 +5,7 @@ import arrowUp from "../assets/arrow-up.png";
 import arrowDown from "../assets/arrow-down.png";
 
 function Buttons() {
-  const { setPage, prevPage, nextPage, page, enable, useOnEnterKeyPress } =
+  const { setPage, prevPage, nextPage, page, enable, setEnable, useOnEnterKeyPress } =
     useContext(AppContext);
   // const handleDone = () => {
   //   setAppState({
@@ -25,6 +25,7 @@ function Buttons() {
     if (enable) {
       setPage((currentPage) => currentPage + 1);
     }
+    setEnable(false)
   };
   
   useOnEnterKeyPress("Enter", handleEnter)

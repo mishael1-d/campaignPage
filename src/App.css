@@ -5,7 +5,7 @@
 }
 body {
   font-family: "Poppins", sans-serif;
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 .navbar {
   display: flex;
@@ -15,9 +15,9 @@ body {
   height: 80px;
   width: 100%;
   padding: 10px 20px;
-  position: fixed;
+  /* position: fixed;
   top: 0;
-  left: 0;
+  left: 0; */
   z-index: 1000;
 }
 .navbar .logo {
@@ -58,7 +58,7 @@ body {
   max-width: 560px;
   height: calc(100% - 700px);
   position: absolute;
-  top: 30%;
+  top: 25%;
   left: 20%;
 }
 .campaign-section h3 {
@@ -106,6 +106,7 @@ textarea::placeholder {
   border-radius: 5px;
   outline: none;
   width: 150px;
+  height: 39px;
   padding: 5px 12px;
   font-weight: 500;
   font-family: "Poppins";
@@ -122,9 +123,11 @@ textarea::placeholder {
   border-radius: 5px;
   outline: none;
   width: 150px;
+  height: 39px;
   padding: 10px 15px;
   font-weight: 500;
   font-size: 15px;
+  font-family: "Poppins";
   cursor: pointer;
   background-color: #000;
 }
@@ -146,7 +149,7 @@ textarea::placeholder {
 .arrow-btn-container {
   position: absolute;
   right: 0;
-  margin-top: 50px;
+  margin-top: 30px;
   display: flex;
 }
 .arrow-btn-container .active,
@@ -163,6 +166,7 @@ textarea::placeholder {
 .arrow-btn-container .active {
   background: #000;
   margin-left: 10px;
+  padding: 5px 12px;
 }
 .arrow-btn-container .inactive {
   background: #262424;
@@ -170,7 +174,7 @@ textarea::placeholder {
   opacity: 0.5;
 }
 .arrow-btn-container img {
-  width: 200%;
+  width: 150%;
   height: auto;
 }
 .imagePage {
@@ -211,8 +215,8 @@ textarea::placeholder {
   height: auto;
 }
 .image img {
-  width: 80px;
-  height: 80px;
+  width: 60px;
+  height: 60px;
   margin: 0 10px 10px;
   border-radius: 5px;
   object-fit: cover;
@@ -228,9 +232,9 @@ textarea::placeholder {
   border-radius: 10px;
   border: 1px solid #000;
   width: 320px;
-  height: 45px;
+  height: 55px;
   max-width: 240px;
-  margin: 20px 0;
+  margin: 10px 0;
   cursor: pointer;
   font-size: 15px;
 }
@@ -261,6 +265,7 @@ textarea::placeholder {
 }
 .option-value {
   margin-right: auto;
+  margin-left: 5px;
   font-weight: 600;
 }
 .optionActive .option {
@@ -277,7 +282,7 @@ textarea::placeholder {
   align-items: center;
   justify-content: space-between;
   padding: 5px;
-  margin: 20px 0;
+  margin: 10px 0;
   border-radius: 10px;
   width: 320px;
   height: 55px;
@@ -308,7 +313,7 @@ textarea::placeholder {
   border-bottom-right-radius: 10px;
   border: 1px solid #000;
   width: 320px;
-  max-width: 250px;
+  max-width: 240px;
   font-weight: 600;
   border-top: none;
   position: relative;
@@ -344,11 +349,13 @@ textarea::placeholder {
 }
 .modal {
   max-width: 550px;
+  position: absolute;
+  top: 90px;
+  max-height: 600px;
   background: #fff;
-  box-shadow: 0px, 16px, 24px rgba(0, 0, 0, 0.2);
   border-radius: 10px;
   padding: 50px 40px;
-  z-index: 100;
+  z-index: 600;
 }
 .categories img {
   width: 30px;
@@ -379,8 +386,8 @@ textarea::placeholder {
   font-weight: 500;
   font-size: 16px;
   flex: 80%;
-  margin: 5px 0;
-  padding: 10px 0;
+  margin: 7px 0;
+  padding: 5px 0;
   cursor: pointer;
 }
 .search-btn-active {
@@ -428,7 +435,7 @@ textarea::placeholder {
   cursor: pointer;
 }
 .preview-container {
-  margin-bottom: 30px;
+  margin-bottom: 50px;
   position: relative;
   top: -20px;
   left: -30%;
@@ -470,6 +477,8 @@ textarea::placeholder {
   background-color: #262424;
   border: none;
   border-radius: 5px;
+  font-family: 'Poppins';
+  font-size: 12px;
   outline: none;
   cursor: pointer;
 }
@@ -478,6 +487,9 @@ textarea::placeholder {
 .campaignDetails {
   display: flex;
   justify-content: space-between;
+  /* position: relative;
+  top: -20px;
+  left: -30%; */
   padding: 100px;
 }
 .left-container .campaignDetailsImage {

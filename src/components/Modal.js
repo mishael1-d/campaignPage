@@ -7,7 +7,7 @@ function Modal({ closeModal }) {
   const { appState, setAppState } = useContext(AppContext);
   
 
-  const handleSelect = (data, e) => {
+  const handleSelect = (data) => {
     let { ...newData } = appState;
     
     const exist = newData.selected.find((val) => val === data);
