@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React, { useContext, useState } from "react";
 import addBtn from "../assets/plus.png";
 import { AppContext } from "../App";
