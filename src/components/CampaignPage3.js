@@ -37,7 +37,7 @@ newImage.campaignImage = fileArray
               <img src={addBtn} alt="" />
             </label>
           </div>
-          <div className="addImage image">{renderPhotos(selectedImages)}</div>
+          <div className="addImage image">{renderPhotos(appState.campaignImage)}</div>
         </div>
       </div>
       <Buttons />

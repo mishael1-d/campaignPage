@@ -29,7 +29,7 @@ function Preview({ prevPage }) {
             })}
           </div>
         </div>
-        <div>
+        <div className="bk-ct">
           <button className="back-btn" onClick={prevPage}>
             Go Back
           </button>

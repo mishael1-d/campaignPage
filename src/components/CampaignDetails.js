@@ -80,53 +80,59 @@ function CampaignDetails() {
         </div>
       </div>
       <div className="right-container">
-        <h3 className="title">More related campaigns</h3>
-        <div className="relatedC-images">
-          <img src={rcImage} alt="" />
-          <p className="rc-content">124 applied</p>
+        <div className="rt-ct">
+          <h3 className="title">More related campaigns</h3>
+          <div className="relatedC-images">
+            <img src={rcImage} alt="" />
+            <p className="rc-content">124 applied</p>
+          </div>
+          <div className="rc-text">
+            <span className="rc-paid">Paid Campaign</span>
+            <span className="rc-date">1 day ago</span>
+          </div>
+          <h3 className="title">Cresent treasures</h3>
+          <p className="small-content">Min 5k followers required</p>
+          <div className="rc-sm-icons">
+            <img src={insta} alt="" srcset="" />
+            <img src={fb} alt="" srcset="" />
+            <img src={linkVector} alt="" srcset="" />
+          </div>
         </div>
-        <div className="rc-text">
-          <span className="rc-paid">Paid Campaign</span>
-          <span className="rc-date">1 day ago</span>
+        <div className="rt-ct">
+          <h3 className="title">More related campaigns</h3>
+          <div className="relatedC-images">
+            <img src={rcImage} alt="" />
+            <p className="rc-content">124 applied</p>
+          </div>
+          <div className="rc-text">
+            <span className="rc-paid">Paid Campaign</span>
+            <span className="rc-date">1 day ago</span>
+          </div>
+          <h3 className="title">Cresent treasures</h3>
+          <p className="small-content">Min 5k followers required</p>
+          <div className="rc-sm-icons">
+            <img src={insta} alt="" />
+            <img src={fb} alt="" />
+            <img src={linkVector} alt="" />
+          </div>
         </div>
-        <h3 className="title">Cresent treasures</h3>
-        <p className="small-content">Min 5k followers required</p>
-        <div className="rc-sm-icons">
-          <img src={insta} alt="" srcset="" />
-          <img src={fb} alt="" srcset="" />
-          <img src={linkVector} alt="" srcset="" />
-        </div>
-        {/* <h3 className="title">More related campaigns</h3> */}
-        <div className="relatedC-images">
-          <img src={rcImage} alt="" />
-          <p className="rc-content">124 applied</p>
-        </div>
-        <div className="rc-text">
-          <span className="rc-paid">Paid Campaign</span>
-          <span className="rc-date">1 day ago</span>
-        </div>
-        <h3 className="title">Cresent treasures</h3>
-        <p className="small-content">Min 5k followers required</p>
-        <div className="rc-sm-icons">
-          <img src={insta} alt="" />
-          <img src={fb} alt="" />
-          <img src={linkVector} alt="" />
-        </div>
-        {/* <h3 className="title">More related campaigns</h3> */}
-        <div className="relatedC-images">
-          <img src={rcImage} alt="" />
-          <p className="rc-content">124 applied</p>
-        </div>
-        <div className="rc-text">
-          <span className="rc-paid">Paid Campaign</span>
-          <span className="rc-date">1 day ago</span>
-        </div>
-        <h3 className="title">Cresent treasures</h3>
-        <p className="small-content">Min 5k followers required</p>
-        <div className="rc-sm-icons">
-          <img src={insta} alt="" />
-          <img src={fb} alt="" />
-          <img src={linkVector} alt="" />
+        <div className="rt-ct">
+          <h3 className="title">More related campaigns</h3>
+          <div className="relatedC-images">
+            <img src={rcImage} alt="" />
+            <p className="rc-content">124 applied</p>
+          </div>
+          <div className="rc-text">
+            <span className="rc-paid">Paid Campaign</span>
+            <span className="rc-date">1 day ago</span>
+          </div>
+          <h3 className="title">Cresent treasures</h3>
+          <p className="small-content">Min 5k followers required</p>
+          <div className="rc-sm-icons">
+            <img src={insta} alt="" />
+            <img src={fb} alt="" />
+            <img src={linkVector} alt="" />
+          </div>
         </div>
       </div>
     </div>

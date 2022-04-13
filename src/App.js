@@ -36,15 +36,25 @@ function App() {
     categories: [],
     selected: [],
   });
-  const prevPage = () => {
+  const prevPage = (e) => {
     setPage((currentPage) => currentPage - 1);
     setAddClass("prev-page-active");
-    setEnable(true);
+    // setEnable(true);
+    // if (!enable) {
+    //   setEnable((currentEnable)=> !currentEnable && true )
+    // } 
+
+    console.log(e.target);
   };
-  const nextPage = () => {
+  const nextPage = (e) => {
     setPage((currentPage) => currentPage + 1);
+    // if (enable) {
+    //   setEnable((currentEnable)=> !currentEnable && true)
+    // } else if (!enable) {
+    //   setEnable((currentEnable)=> currentEnable && true)
+    // }
     setAddClass("next-page-active");
-    setEnable(false);
+    // setEnable(false);
   };
   const lastPage =()=>{
     setPage((currentPage) => currentPage + 2);

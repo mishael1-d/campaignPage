@@ -6,12 +6,12 @@ function CampaignPage2() {
   const handleDescChange = (e)=>{
     const {...newDesc} = appState
     newDesc.campaignDescription = e.target.value
+    setAppState(newDesc)
     if (newDesc.campaignDescription !== "") {
       setEnable(true);
     } else {
       setEnable(false);
     }
-    setAppState(newDesc)
   }
   return (
     <div className="descPage">
