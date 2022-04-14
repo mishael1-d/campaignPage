@@ -3,7 +3,7 @@ import { AppContext } from "../App";
 import Buttons from "./Buttons"
 import Warnings from "./Warnings";
 function CampaignPage4({ setEnable }) {
-  const { appState, setAppState } = useContext(AppContext);
+  const { appState, setAppState, warning, setWarning } = useContext(AppContext);
   const [activeOptionA, setActiveOptionA] = useState(false);
   const [activeOptionB, setActiveOptionB] = useState(false);
 
@@ -25,7 +25,9 @@ function CampaignPage4({ setEnable }) {
     
     if (newState.serviceDescription > 0) {
       setEnable(true);
+      setWarning(false)
     } else {
+      setWarning(true)
       setEnable(false);
     }
     setAppState(newState);
@@ -86,7 +88,7 @@ function CampaignPage4({ setEnable }) {
               value={`$${appState.serviceDescription}`}
               name={Object.keys(appState)[4]}
             />
-            <Warnings />
+            {warning && <Warnings />}
           </div>
         )}
       </div>

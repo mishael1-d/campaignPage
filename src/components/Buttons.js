@@ -45,7 +45,7 @@ function Buttons() {
         </span>
       )}
       <div className="arrow-btn-container">
-        <button className="active" onClick={prevPage} disabled={page === 0}>
+        <button className={page !== 0 ? "active" : "inactive"} onClick={prevPage} disabled={page === 0}>
           <img src={arrowUp} alt="Back" />
         </button>
         <button

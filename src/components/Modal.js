@@ -28,22 +28,49 @@ function Modal({ closeModal }) {
 
   const categories = [
     {
-      name: "Category1",
+      name: "Adventure",
     },
     {
-      name: "Category2",
+      name: "Racing",
     },
     {
-      name: "Category3",
+      name: "Athlete",
     },
     {
-      name: "Category4",
+      name: "Technology",
     },
     {
-      name: "Category5",
+      name: "Advertisment",
     },
     {
-      name: "Category6",
+      name: "Blogging",
+    },
+    {
+      name: "Science",
+    },
+    {
+      name: "Arts",
+    },
+    {
+      name: "Publications",
+    },
+    {
+      name: "Real Estate",
+    },
+    {
+      name: "Social media",
+    },
+    {
+      name: "Networking",
+    },
+    {
+      name: "Freelancing",
+    },
+    {
+      name: "Web Development",
+    },
+    {
+      name: "Data Science",
     },
   ];
 

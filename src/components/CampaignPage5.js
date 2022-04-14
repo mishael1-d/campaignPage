@@ -24,7 +24,7 @@ function CampaignPage5({ setEnable }) {
       newOptions.platform.pop(filtered.toString())
       setActiveOption(filtered)
       console.log(filtered.toString())
-      setAppState(activeOption)
+      setAppState(newOptions)
       // const { ...newData } = appState;
       // setAppState(newData);
     }

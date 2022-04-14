@@ -30,7 +30,7 @@ newImage.campaignImage = fileArray
   return (
     <>
       <div className="imagePage">
-        <h3 className="heading">Please Select Image</h3>
+        <h3 className="heading">Please Select Images</h3>
         <div className="imageContainer">
           <div className="addImage addBtn">
             <input type="file" multiple id="image" onChange={onFileChange} />

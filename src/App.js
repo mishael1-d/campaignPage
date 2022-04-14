@@ -2,8 +2,8 @@ import React, { useEffect, useRef, useState } from "react";
 import "./App.css";
 import Navbar from "./components/Navbar";
 import Campaigns from "./components/Campaigns";
-// import CampaignDetails from "./components/CampaignDetails";
-// import Preview from "./components/Preview"
+import { addDoc, collection } from "firebase/firestore";
+import { db } from "./firebase";
 export const AppContext = React.createContext();
 const useOnEnterKeyPress = (key, cb) => {
   const callbackRef = useRef(cb);
@@ -24,6 +24,8 @@ function App() {
   const [page, setPage] = useState(0);
   const [addClass, setAddClass] = useState("");
   const [enable, setEnable] = useState(false);
+
+  const [warning, setWarning] = useState(false);
   const [appState, setAppState] = useState({
     campaignName: "",
     campaignDescription: "",
@@ -36,38 +38,64 @@ function App() {
     categories: [],
     selected: [],
   });
-  const prevPage = (e) => {
+
+  const stateKeys = ["campaignName",
+  "campaignDescription",
+  "campaignImage",
+  "serviceOption",
+  "serviceDescription" ,
+  "platform",
+  "followers",
+  "targetGender",
+  "categories",
+  "selected"]
+
+  const prevPage = () => {
     setPage((currentPage) => currentPage - 1);
     setAddClass("prev-page-active");
-    setEnable(true);
-    // if (!enable) {
-    //   setEnable((currentEnable)=> !currentEnable && true )
-    // } 
-
-    console.log(e.target);
+   const value = stateKeys.map((keys)=>appState[keys].length > 0)
+    if (value[page - 1]) {
+      setEnable(true);
+    } else {
+      setEnable(false)
+    }
   };
-  const nextPage = (e) => {
+  const nextPage = () => {
+    setAddClass("next-page-active");
+    const value = stateKeys.map((keys)=>appState[keys].length > 0)
+    if (value[page + 1]) {
+      setEnable(true);
+    }
+    else {setEnable(false);}
+    console.log(value[page + 1])
     setPage((currentPage) => currentPage + 1);
-    // if (enable) {
-    //   setEnable((currentEnable)=> !currentEnable && true)
-    // } else if (!enable) {
-    //   setEnable((currentEnable)=> currentEnable && true)
-    // }
-    setAddClass("next-page-active");
-    setEnable(false);
   };
-  const lastPage =()=>{
-    setPage((currentPage) => currentPage + 2);
-    setAddClass("next-page-active");
-    setEnable(false);
-  }
+
+
   const handleStateChange = (e) => {
     const name = e.target.name;
     const value = e.target.value;
     let { ...newState } = appState;
     newState[name] = value;
     setAppState(newState);
-   
+  };
+
+  const postRef = collection(db, "users");
+  const submitCampaign = async () => {
+    setPage((currentPage) => currentPage + 2);
+    setAddClass("next-page-active");
+    setEnable(false);
+    await addDoc(postRef, {
+      campaignName: appState.campaignName,
+      campaignDescription: appState.campaignDescription,
+      campiagnImage: appState.campaignImage,
+      followers: appState.followers,
+      categories: appState.categories,
+      platforms: appState.platform,
+      servicOptions: appState.serviceOption,
+      serviceDescription: appState.serviceDescription,
+      gender: appState.targetGender,
+    });
   };
 
   return (
@@ -86,7 +114,10 @@ function App() {
           enable,
           useOnEnterKeyPress,
           addClass,
-          lastPage
+          // lastPage,
+          warning,
+          setWarning,
+          submitCampaign,
         }}
       >
         <Campaigns />

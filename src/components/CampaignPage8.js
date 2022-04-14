@@ -17,7 +17,7 @@ function CampaignPage8({ setEnable }) {
   };
   const closeModal = () => {
     setShowCategory(false);
-    setCategories(appState.categories.toString());
+    setCategories(appState.selected.toString());
   };
 
   return (

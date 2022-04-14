@@ -1,9 +1,10 @@
 import React, { useContext } from "react";
 import { AppContext } from "../App";
 import Buttons from "./Buttons"
+import Warnings from "./Warnings";
 
 function CampaignPage6({ setEnable }) {
-  const { appState, setAppState } = useContext(AppContext);
+  const { appState, setAppState, warning, setWarning } = useContext(AppContext);
   const state = useContext(AppContext);
   
   const handleOnChange = (e) => {
@@ -11,7 +12,9 @@ function CampaignPage6({ setEnable }) {
     newState.followers = e.target.value.replace(/\D/g, "");
     if (newState.followers > 0) {
       setEnable(true);
+      setWarning(false)
     } else {
+      setWarning(true);
       setEnable(false);
     }
     setAppState(newState);
@@ -27,6 +30,7 @@ function CampaignPage6({ setEnable }) {
         value={appState.followers}
         name={Object.keys(state.appState)[6]}
       />
+      {warning && <Warnings/>}
       <Buttons />
     </>
   );
