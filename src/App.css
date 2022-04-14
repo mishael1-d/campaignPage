@@ -1292,3 +1292,67 @@ textarea::placeholder {
   margin-right: 40px;
 }
 }
+
+@media screen and (max-width: 480px) {
+  body {
+    width: 100%;
+    overflow-x: hidden;
+  }
+  .navbar {
+    width: 520px;
+  }
+  .campaign-section {
+    max-width: 100%;
+    height: calc(100vh - 80px);
+    position: relative;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    justify-content: center;
+    padding-left: 50px;
+  }
+  .campaign-section h3 {
+    max-width:fit-content
+  }
+  .arrow-btn-container {
+    position: absolute;
+    right: -55px;
+    bottom: -100px;
+    display: flex;
+  }
+  .modal {
+    max-width: 440px;
+    position: absolute;
+    left: 40px;
+    top: 150px;
+    max-height: 537px;
+    background: #fff;
+    border-radius: 10px;
+    padding: 50px 40px;
+    z-index: 600;
+  }
+  .search-bar input[type="search"] {
+    width: 300px;
+  }
+  .campaignDetails {
+    padding: 0;
+    left: 10px;
+    top: 90px
+  }
+  .rc-text {
+    max-width:300px;
+  }
+  .right-container {
+    margin-top: 50px;
+    display: flex;
+    overflow-x: hidden;
+  }
+  .rt-ct {
+    margin-right: 0;
+  }
+  .details-content {
+    margin: 0;
+  }
+}
