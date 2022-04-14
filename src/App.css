@@ -1323,15 +1323,15 @@ textarea::placeholder {
     display: flex;
   }
   .modal {
-    max-width: 440px;
+    max-width: fit-content;
     position: absolute;
-    left: 40px;
-    top: 150px;
-    max-height: 537px;
+    /* left: 40px; */
+    /* top: 150px; */
+    max-height: fit-content;
     background: #fff;
     border-radius: 10px;
     padding: 50px 40px;
-    z-index: 600;
+    z-index: 624;
   }
   .search-bar input[type="search"] {
     width: 300px;
@@ -1354,5 +1354,11 @@ textarea::placeholder {
   }
   .details-content {
     margin: 0;
+  }
+  .content {
+    max-width: 500px;
+  }
+  .audience-section {
+    margin-bottom: 20px;
   }
 }
