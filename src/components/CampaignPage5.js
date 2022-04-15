@@ -1,27 +1,31 @@
-import React, {  useContext } from "react";
+import React, { useContext } from "react";
 import { AppContext } from "../App";
-import Buttons from "./Buttons"
+import Buttons from "./Buttons";
 
 function CampaignPage5({ setEnable }) {
   const { appState, setAppState } = useContext(AppContext);
-  
+
   const handleSelect = (data) => {
     let { ...newOptions } = appState;
-    let exist = newOptions.platform.includes(data)
+    let exist = newOptions.platform.includes(data);
     if (!exist) {
-      newOptions.platform.push(data)
-      setAppState(newOptions)
+      newOptions.platform.push(data);
+      setAppState(newOptions);
+      if (!newOptions.platform.length > 0) {
+        setEnable(false);
+      } else {
+        setEnable(true);
+      }
     } else {
-      let filtered = newOptions.platform.filter((option)=>option !== data)
-      newOptions.platform = filtered
-      setAppState(newOptions)
+      let filtered = newOptions.platform.filter((option) => option !== data);
+      newOptions.platform = filtered;
+      setAppState(newOptions);
+      if (!newOptions.platform.length > 0) {
+        setEnable(false);
+      } else {
+        setEnable(true);
+      }
     }
-    if (newOptions.platform.length > 0) {
-      setEnable(true);
-    } else {
-      setEnable(false)
-    }
-    
   };
   const platformOptions = [
     {
@@ -46,27 +50,30 @@ function CampaignPage5({ setEnable }) {
     },
   ];
 
-
   return (
     <>
-    <div className="platformPage">
-      <h3 className="heading">Select the Platform:</h3>
-      <div className="inputContainer">
-        {platformOptions.map((option) => {
-          return (
-            <div
-              className={appState.platform.includes(option.value) ? "optionActive" : "optionContainer"}
-              key={option.value}
-              onClick={() => handleSelect(option.value)}
-            >
-              <div className="option">{option.option}</div>
-              <p className="option-value">{option.value}</p>
-            </div>
-          );
-        })}
+      <div className="platformPage">
+        <h3 className="heading">Select the Platforms:</h3>
+        <div className="inputContainer">
+          {platformOptions.map((option) => {
+            return (
+              <div
+                className={
+                  appState.platform.includes(option.value)
+                    ? "optionActive"
+                    : "optionContainer"
+                }
+                key={option.value}
+                onClick={() => handleSelect(option.value)}
+              >
+                <div className="option">{option.option}</div>
+                <p className="option-value">{option.value}</p>
+              </div>
+            );
+          })}
+        </div>
       </div>
-    </div>
-    <Buttons />
+      <Buttons />
     </>
   );
 }

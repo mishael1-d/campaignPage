@@ -7,20 +7,6 @@ import arrowDown from "../assets/arrow-down.png";
 function Buttons() {
   const { setPage, prevPage, nextPage, page, enable, setEnable, useOnEnterKeyPress } =
     useContext(AppContext);
-  // const handleDone = () => {
-  //   setAppState({
-  //     campaignName: "",
-  //     campaignDescription: "",
-  //     campaignImage: "",
-  //     serviceOption: "",
-  //     serviceDescription: "",
-  //     platform: [],
-  //     followers: "",
-  //     targetGender: "Select your gender",
-  //     categories: [],
-  //     selected: []
-  //   });
-  // };
   const handleEnter = () => {
     if (enable) {
       setPage((currentPage) => currentPage + 1);

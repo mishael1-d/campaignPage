@@ -25,13 +25,15 @@ function App() {
   const [addClass, setAddClass] = useState("");
   const [enable, setEnable] = useState(false);
 
+  const [activeOptionA, setActiveOptionA] = useState(false);
+  const [activeOptionB, setActiveOptionB] = useState(false);
   const [warning, setWarning] = useState(false);
   const [appState, setAppState] = useState({
     campaignName: "",
     campaignDescription: "",
     campaignImage: [],
     serviceOption: "",
-    serviceDescription: "",
+    // serviceDescription: "",
     platform: [],
     followers: "",
     targetGender: "Select your gender",
@@ -39,48 +41,25 @@ function App() {
     selected: [],
   });
 
-  const stateKeys = [
-    "campaignName",
-    "campaignDescription",
-    "campaignImage",
-    "serviceOption",
-    "serviceDescription",
-    "platform",
-    "followers",
-    "targetGender",
-    "categories",
-    "selected",
-  ];
-
+  const stateKeys = Object.values(appState);
   const prevPage = () => {
     setPage((currentPage) => currentPage - 1);
+
     setAddClass("prev-page-active");
-    const value = stateKeys.map((keys) => appState[keys].length > 0);
-    if (value[page - 1]) {
+    if (stateKeys[page - 1].length > 0 && (stateKeys[page + 1] !== "" || stateKeys[page - 1] !== [])) {
       setEnable(true);
     } else {
       setEnable(false);
     }
-    console.log(value);
   };
   const nextPage = () => {
-    setAddClass("next-page-active");
-    const value = stateKeys.map((keys) => appState[keys].length > 0);
-    if (!value[page + 1]) {
-      setEnable(false);
-    } else {
-      setEnable(true);
-    }
     setPage((currentPage) => currentPage + 1);
-    console.log(value[page + 1]);
-  };
-
-  const handleStateChange = (e) => {
-    const name = e.target.name;
-    const value = e.target.value;
-    let { ...newState } = appState;
-    newState[name] = value;
-    setAppState(newState);
+    setAddClass("next-page-active");
+    if (stateKeys[page + 1].length > 0 && (stateKeys[page + 1] !== "" || stateKeys[page + 1] !== [])) {
+      setEnable(true);
+    } else {
+      setEnable(false);
+    }
   };
 
   const postRef = collection(db, "users");
@@ -107,7 +86,6 @@ function App() {
       <AppContext.Provider
         value={{
           appState,
-          handleStateChange,
           setAppState,
           page,
           setPage,
@@ -120,6 +98,10 @@ function App() {
           warning,
           setWarning,
           submitCampaign,
+          activeOptionA,
+          setActiveOptionA,
+          activeOptionB,
+          setActiveOptionB,
         }}
       >
         <Campaigns />

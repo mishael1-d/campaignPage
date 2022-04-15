@@ -2,7 +2,7 @@
 import React, { useContext, useState } from "react";
 import { AppContext } from "../App";
 import checkbox from "../assets/checkbox.png";
-function Modal({ closeModal }) {
+function Modal({ closeModal, setCategories }) {
   const [searchTerm, setSearchTerm] = useState("");
   const { appState, setAppState } = useContext(AppContext);
   
@@ -13,10 +13,13 @@ function Modal({ closeModal }) {
     const exist = newData.selected.find((val) => val === data);
     if (!exist) {
       newData.selected.push(data);
+      
+      setCategories(newData.selected.join(', '));
     } else {
       const filtered = newData.selected.filter((val) => val !== data);
       newData.selected=filtered
     }
+    setCategories(newData.selected.join(', '));
     
     if (!newData.categories.includes(data)) {
       newData.categories.push(data);
