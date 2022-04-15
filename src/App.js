@@ -39,38 +39,41 @@ function App() {
     selected: [],
   });
 
-  const stateKeys = ["campaignName",
-  "campaignDescription",
-  "campaignImage",
-  "serviceOption",
-  "serviceDescription" ,
-  "platform",
-  "followers",
-  "targetGender",
-  "categories",
-  "selected"]
+  const stateKeys = [
+    "campaignName",
+    "campaignDescription",
+    "campaignImage",
+    "serviceOption",
+    "serviceDescription",
+    "platform",
+    "followers",
+    "targetGender",
+    "categories",
+    "selected",
+  ];
 
   const prevPage = () => {
     setPage((currentPage) => currentPage - 1);
     setAddClass("prev-page-active");
-   const value = stateKeys.map((keys)=>appState[keys].length > 0)
+    const value = stateKeys.map((keys) => appState[keys].length > 0);
     if (value[page - 1]) {
       setEnable(true);
     } else {
-      setEnable(false)
+      setEnable(false);
     }
+    console.log(value);
   };
   const nextPage = () => {
     setAddClass("next-page-active");
-    const value = stateKeys.map((keys)=>appState[keys].length > 0)
-    if (value[page + 1]) {
+    const value = stateKeys.map((keys) => appState[keys].length > 0);
+    if (!value[page + 1]) {
+      setEnable(false);
+    } else {
       setEnable(true);
     }
-    else {setEnable(false);}
-    console.log(value[page + 1])
     setPage((currentPage) => currentPage + 1);
+    console.log(value[page + 1]);
   };
-
 
   const handleStateChange = (e) => {
     const name = e.target.name;
