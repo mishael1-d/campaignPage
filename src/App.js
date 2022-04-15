@@ -55,7 +55,7 @@ function App() {
   const nextPage = () => {
     setPage((currentPage) => currentPage + 1);
     setAddClass("next-page-active");
-    if (stateKeys[page + 1].length > 0 && (stateKeys[page + 1] !== "" || stateKeys[page + 1] !== [])) {
+    if (stateKeys[page + 1].length > 0 && (stateKeys[page + 1] !== "" || stateKeys[page + 1] !== [] || stateKeys[page + 1] !== "Select your gender")) {
       setEnable(true);
     } else {
       setEnable(false);

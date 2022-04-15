@@ -36,7 +36,7 @@ function CampaignPage8({ setEnable }) {
           onClick={handleCategorySelect}
         >
           <p className="option-value">
-            {appState.selected.length < 0 ? "Select categories" : categories}
+            {categories}
           </p>
           {categories === "Select categories"  && (
             <img src={arrowDown} alt="" />
