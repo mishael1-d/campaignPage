@@ -64,7 +64,6 @@ function CampaignPage4({ setEnable }) {
               placeholder="Describe here"
               onChange={(e) => handleOnOptionChange(e)}
               value={appState.serviceOption}
-              name={Object.keys(appState)[3]}
             />
           </div>
         )}
@@ -86,7 +85,6 @@ function CampaignPage4({ setEnable }) {
               pattern="[0-9]*"
               onChange={(e)=>handleOnDescChange(e)}
               value={`$${appState.serviceDescription}`}
-              name={Object.keys(appState)[4]}
             />
             {warning && <Warnings />}
           </div>

@@ -1,27 +1,19 @@
-import React, { useState, useContext } from "react";
+import React, {  useContext } from "react";
 import { AppContext } from "../App";
 import Buttons from "./Buttons"
 
 function CampaignPage5({ setEnable }) {
   const { appState, setAppState } = useContext(AppContext);
-
-  const [activeOption, setActiveOption] = useState([])
   
   const handleSelect = (data) => {
-    const { ...newOptions } = appState;
-    newOptions.platform = [...activeOption]
-    const exist = newOptions.platform.find((val)=>val === data)
-    if(!exist){
+    let { ...newOptions } = appState;
+    let exist = newOptions.platform.includes(data)
+    if (!exist) {
       newOptions.platform.push(data)
-      setActiveOption(newOptions.platform)
-      console.log(newOptions.platform)
-      setAppState(newOptions);
-    } 
-    else {
-      const filtered = newOptions.platform.filter((val)=>val !== data)
-      newOptions.platform.pop(filtered.toString())
-      setActiveOption(filtered)
-      console.log(filtered.toString())
+      setAppState(newOptions)
+    } else {
+      let filtered = newOptions.platform.filter((option)=>option !== data)
+      newOptions.platform = filtered
       setAppState(newOptions)
     }
     if (newOptions.platform.length > 0) {
@@ -60,10 +52,10 @@ function CampaignPage5({ setEnable }) {
     <div className="platformPage">
       <h3 className="heading">Select the Platform:</h3>
       <div className="inputContainer">
-        {platformOptions.map((option, index) => {
+        {platformOptions.map((option) => {
           return (
             <div
-              className={activeOption.includes(option.value) ? "optionActive" : "optionContainer"}
+              className={appState.platform.includes(option.value) ? "optionActive" : "optionContainer"}
               key={option.value}
               onClick={() => handleSelect(option.value)}
             >
