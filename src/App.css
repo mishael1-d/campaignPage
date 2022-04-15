@@ -292,7 +292,7 @@ textarea::placeholder {
   border-radius: 10px;
   width: 320px;
   height: 55px;
-  max-width: 250px;
+  max-width: 240px;
   cursor: pointer;
   background-color: #000;
   color: #fff;
