@@ -2,9 +2,8 @@ import React, { useContext } from "react";
 import { AppContext } from "../App";
 // import Buttons from "./Buttons"
 function CampaignPage9() {
-  const { appState, prevPage, nextPage, submitCampaign } =
+  const { prevPage, nextPage, submitCampaign } =
     useContext(AppContext);
-  console.log(appState);
   return (
     <>
       <div className="submit-section">

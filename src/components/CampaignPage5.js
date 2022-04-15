@@ -16,8 +16,6 @@ function CampaignPage5({ setEnable }) {
       setActiveOption(newOptions.platform)
       console.log(newOptions.platform)
       setAppState(newOptions);
-      //  const { ...newData } = appState;
-      //  newData.platform.push(activeOption).toString();
     } 
     else {
       const filtered = newOptions.platform.filter((val)=>val !== data)
@@ -25,8 +23,6 @@ function CampaignPage5({ setEnable }) {
       setActiveOption(filtered)
       console.log(filtered.toString())
       setAppState(newOptions)
-      // const { ...newData } = appState;
-      // setAppState(newData);
     }
     if (newOptions.platform.length > 0) {
       setEnable(true);

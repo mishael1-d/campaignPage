@@ -117,15 +117,12 @@ function App() {
           enable,
           useOnEnterKeyPress,
           addClass,
-          // lastPage,
           warning,
           setWarning,
           submitCampaign,
         }}
       >
         <Campaigns />
-        {/* <CampaignDetails /> */}
-        {/* <Preview /> */}
       </AppContext.Provider>
     </>
   );
