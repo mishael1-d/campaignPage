@@ -1381,15 +1381,18 @@ textarea::placeholder {
     display: flex;
   }
   .modal {
-    max-width: fit-content;
+    max-width: -moz-fit-content;
+    /* max-width: fit-content; */
     position: absolute;
     /* left: 40px; */
     /* top: 150px; */
-    max-height: fit-content;
+    max-height: -moz-fit-content;
+    /* max-height: fit-content; */
     background: #fff;
     border-radius: 10px;
-    padding: 50px 40px;
+    padding: 10px;
     z-index: 624;
+    width: 95vw;
   }
   .search-bar input[type="search"] {
     width: 300px;
