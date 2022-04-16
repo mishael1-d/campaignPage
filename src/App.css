@@ -1080,7 +1080,7 @@ textarea::placeholder {
   align-items: center;
   position: absolute;
   top: 20%;
-  left: 3%;
+  left: 5%;
 }
 .preview-image {
   width: 500px;
@@ -1152,7 +1152,7 @@ textarea::placeholder {
 .categories-section span {
   background: #2624241a;
   color: #000;
-  width: 90px;
+  /* width: 90px; */
   font-weight: 600;
   font-size: 12px;
   padding: 10px 20px;
@@ -1340,7 +1340,10 @@ textarea::placeholder {
     overflow-x: hidden;
   }
   .navbar {
-    width: 520px;
+    width: 100%;
+  }
+  .navbar .profile {
+    margin-right: 0;
   }
   .campaign-section {
     max-width: 100%;
@@ -1352,15 +1355,29 @@ textarea::placeholder {
     flex-direction: column;
     /* align-items: center; */
     justify-content: center;
-    padding-left: 50px;
+    padding-left: 20px;
   }
   .campaign-section h3 {
-    max-width:fit-content
+    max-width: -moz-fit-content;
+    max-width: fit-content;
+    padding-left: 0;
+    width: fit-content;
   }
+  .campaign-section input,
+  .campaign-section textarea {
+    background-color: #ffffff;
+    border: 1px solid #000;
+    border-radius: 5px;
+    box-sizing: border-box;
+    width: 80%;
+    /* height: 45px; */
+    padding: 10px;
+    margin-bottom: 20px;
+    font-size: 18px;
+    font-family: "Poppins", sans-serif;
+  } 
   .arrow-btn-container {
     position: absolute;
-    right: -55px;
-    bottom: -100px;
     display: flex;
   }
   .modal {
@@ -1389,18 +1406,46 @@ textarea::placeholder {
     margin-top: 50px;
     display: flex;
     overflow-x: hidden;
+    padding: 0;
   }
   .rt-ct {
     margin-right: 0;
   }
   .details-content {
     margin: 0;
+    width: 100vw;
   }
   .content {
-    max-width: 500px;
+    max-width: 95vw;
   }
   .audience-section {
     margin-bottom: 20px;
   }
-  
+  .preview-image {
+    width: 90%;
+    margin: 0;
+  }
+  .categories-section {
+    display: flex;
+    flex-wrap: wrap;
+  } .mobile {
+   display: block;
+  }
+  .back-btn {
+    margin-left: 20px;
+    right: 0px;
+    position: absolute;
+  }
+  .left-container .campaignDetailsImage {
+    width: 100vw;
+  }
+  .details-content .actionBtns {
+    display: flex;
+  }
+  .actionBtns .btn-secondary, .actionBtns .btn-primary{
+    width: 150px;
+  }
+  .sm-icon-container {
+    flex-wrap: wrap;
+  }
 }

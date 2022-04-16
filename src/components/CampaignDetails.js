@@ -43,7 +43,7 @@ function CampaignDetails() {
               fast-track to a competitively paid job.
             </p>
           </section>
-          <section className="categories-section">
+          <section className="categories-section mobile">
             <h3 className="cate title">Categories</h3>
             <span className="content">Technology</span>
             <span className="content">Ambassador</span>
