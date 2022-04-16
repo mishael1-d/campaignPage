@@ -402,6 +402,12 @@ textarea::placeholder {
   padding: 5px 0;
   cursor: pointer;
 }
+.blackCat {
+  color: red
+}
+.whiteCat {
+  color: pink
+}
 .search-bar{
   text-align: center;
 }

@@ -5,29 +5,33 @@ import checkbox from "../assets/checkbox.png";
 function Modal({ closeModal, setCategories }) {
   const [searchTerm, setSearchTerm] = useState("");
   const { appState, setAppState } = useContext(AppContext);
-  
+  const [catStyle, setCatStyle] = useState(false)
 
-  const handleSelect = (data) => {
+  const handleSelect = (data, index) => {
     let { ...newData } = appState;
-    
-    const exist = newData.selected.find((val) => val === data);
-    if (!exist) {
-      newData.selected.push(data);
-      
+    let filter = [];
+      const exist = newData.selected.find((val) => val === data);
+      if (newData.selected.length === 5) {
+        filter = newData.selected.filter((val) => val !== data);
+        newData.selected = filter;
+        setCatStyle(v=>!v)
+      }
+      else if (!exist) {
+        newData.selected.push(data);
+        setCategories(newData.selected.join(', '));
+        // setCatStyle(false)
+      } else {
+        filter = newData.selected.filter((val) => val !== data);
+        newData.selected = filter;
+      }
       setCategories(newData.selected.join(', '));
-    } else {
-      const filtered = newData.selected.filter((val) => val !== data);
-      newData.selected=filtered
+      if (!newData.categories.includes(data)) {
+        newData.categories.push(data);
+        setAppState(newData);
+      } else {
+        setAppState(newData);
+      }
     }
-    setCategories(newData.selected.join(', '));
-    
-    if (!newData.categories.includes(data)) {
-      newData.categories.push(data);
-      setAppState(newData);
-    } else {
-      setAppState(newData)
-    }
-  };
 
   const categories = [
     {
@@ -101,14 +105,14 @@ function Modal({ closeModal, setCategories }) {
               return category;
             }
           })
-          .map((category) => {
+          .map((category, index) => {
             return (
               <div
                 className="categories"
                 key={category.name}
-                onClick={(e) => handleSelect(category.name, e)}
+                onClick={() => handleSelect(category.name)}
               >
-                <p>{category.name}</p>
+                <p className={catStyle ? "blackCat" : "whiteCat"}>{category.name}</p>
                 {appState.selected.includes(category.name) && (
                   <img src={checkbox} alt="Selected" />
                 )}
@@ -117,8 +121,12 @@ function Modal({ closeModal, setCategories }) {
           })}
         <button
           type="submit"
-          className={appState.selected.length > 0 ? "search-btn-active" : "search-btn-inactive"}
-          onClick= {() => closeModal()}
+          className={
+            appState.selected.length > 0
+              ? "search-btn-active"
+              : "search-btn-inactive"
+          }
+          onClick={() => closeModal()}
         >
           Done
         </button>
