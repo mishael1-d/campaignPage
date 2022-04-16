@@ -403,10 +403,10 @@ textarea::placeholder {
   cursor: pointer;
 }
 .blackCat {
-  color: red
+  color: #242626;
 }
 .whiteCat {
-  color: pink
+  color: #000;
 }
 .search-bar{
   text-align: center;
