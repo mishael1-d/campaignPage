@@ -1385,7 +1385,7 @@ textarea::placeholder {
     /* max-width: fit-content; */
     position: absolute;
     /* left: 40px; */
-    /* top: 150px; */
+    top: 0;
     max-height: -moz-fit-content;
     /* max-height: fit-content; */
     background: #fff;
