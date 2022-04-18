@@ -22,7 +22,6 @@ const useOnEnterKeyPress = (key, cb) => {
 };
 function App() {
   const [page, setPage] = useState(0);
-  const [addClass, setAddClass] = useState("");
   const [enable, setEnable] = useState(false);
 
   const [activeOptionA, setActiveOptionA] = useState(false);
@@ -33,7 +32,6 @@ function App() {
     campaignDescription: "",
     campaignImage: [],
     serviceOption: "",
-    // serviceDescription: "",
     platform: [],
     followers: "",
     targetGender: "Select your gender",
@@ -44,9 +42,7 @@ function App() {
   const stateKeys = Object.values(appState);
   const prevPage = () => {
     setPage((currentPage) => currentPage - 1);
-
-    setAddClass("prev-page-active");
-    if (stateKeys[page - 1].length > 0 && (stateKeys[page + 1] !== "" || stateKeys[page - 1] !== [])) {
+    if (stateKeys[page - 1].length > 0 && (stateKeys[page - 1] !== "" || stateKeys[page - 1] !== [])) {
       setEnable(true);
     } else {
       setEnable(false);
@@ -54,7 +50,6 @@ function App() {
   };
   const nextPage = () => {
     setPage((currentPage) => currentPage + 1);
-    setAddClass("next-page-active");
     if (stateKeys[page + 1].length > 0 && (stateKeys[page + 1] !== "" || stateKeys[page + 1] !== [] || stateKeys[page + 1] !== "Select your gender")) {
       setEnable(true);
     } else {
@@ -65,7 +60,6 @@ function App() {
   const postRef = collection(db, "users");
   const submitCampaign = async () => {
     setPage((currentPage) => currentPage + 2);
-    setAddClass("next-page-active");
     setEnable(false);
     await addDoc(postRef, {
       campaignName: appState.campaignName,
@@ -94,7 +88,6 @@ function App() {
           setEnable,
           enable,
           useOnEnterKeyPress,
-          addClass,
           warning,
           setWarning,
           submitCampaign,
