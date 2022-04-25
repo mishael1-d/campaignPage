@@ -3,15 +3,22 @@ import { AppContext } from "../App";
 import Buttons from "./Buttons";
 import Warnings from "./Warnings";
 function CampaignPage4({ setEnable }) {
-  const { appState, setAppState, warning, activeOptionA, setActiveOptionA, activeOptionB, setActiveOptionB } = useContext(AppContext);
+  const { appState, setAppState, warning, setWarning,  activeOptionA, setActiveOptionA, activeOptionB, setActiveOptionB, message, setMessage } = useContext(AppContext);
   const handleOnOptionChange = (e) => {
     const { ...newState } = appState;
     if (activeOptionA){
       newState.serviceOption = e.target.value;
     }
     if (activeOptionB) {
-      newState.serviceOption = e.target.value.replace(/\D/g, "");
-    }
+      if (!e.target.value.replace(/\D/g, "")){
+        setWarning(true)
+        setMessage("Only numbers are allowed")
+        newState.serviceOption = ""
+      } else {
+        setWarning(false)
+        newState.serviceOption = e.target.value.replace(/\D/g, "");
+      }
+    } 
 
     if (!newState.serviceOption) {
       setEnable(false);
@@ -82,12 +89,12 @@ function CampaignPage4({ setEnable }) {
                 onChange={(e) => activeOptionB && handleOnOptionChange(e)}
                 value={`$${appState.serviceOption}`}
               />
-              {warning && <Warnings />}
+              {warning && <Warnings message={message}/>}
             </div>
           )}
         </div>
-      </div>
       <Buttons />
+      </div>
     </>
   );
 }

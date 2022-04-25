@@ -24,6 +24,7 @@ function App() {
   const [page, setPage] = useState(0);
   const [enable, setEnable] = useState(false);
 
+  const [message, setMessage] = useState("")
   const [activeOptionA, setActiveOptionA] = useState(false);
   const [activeOptionB, setActiveOptionB] = useState(false);
   const [warning, setWarning] = useState(false);
@@ -31,7 +32,7 @@ function App() {
     campaignName: "",
     campaignDescription: "",
     campaignImage: [],
-    serviceOption: "",
+    serviceOption: 0,
     platform: [],
     followers: "",
     targetGender: "Select your gender",
@@ -95,6 +96,8 @@ function App() {
           setActiveOptionA,
           activeOptionB,
           setActiveOptionB,
+          message,
+          setMessage
         }}
       >
         <Campaigns />

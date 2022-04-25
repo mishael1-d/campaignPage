@@ -80,8 +80,8 @@ function CampaignDetails() {
         </div>
       </div>
       <div className="right-container">
-          <h3 className="title">More related campaigns</h3>
         <div className="rt-ct">
+          <h3 className="title">More related campaigns</h3>
           <div className="relatedC-images">
             <img src={rcImage} alt="" />
             <p className="rc-content">124 applied</p>

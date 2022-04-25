@@ -5,9 +5,8 @@ import { AppContext } from "../App";
 import Buttons from "./Buttons";
 import { Alert } from 'antd';
 function CampaignPage3() {
-  const { appState, setAppState, setEnable, warning, setWarning } = useContext(AppContext);
+  const { appState, setAppState, setEnable, warning, setWarning, message, setMessage } = useContext(AppContext);
   const [selectedImages, setSelectedImages] = useState([]);
-const [message, setMessage] = useState("")
   const onFileChange = (e) => {
     const { ...newImage } = appState;
     if (e.target.files) {
@@ -66,8 +65,8 @@ const [message, setMessage] = useState("")
             })}
           </div>
         </div>
-      </div>
       <Buttons />
+      </div>
     </>
   );
 }

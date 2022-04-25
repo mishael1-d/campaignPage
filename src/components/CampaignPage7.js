@@ -40,8 +40,8 @@ const {appState, setAppState} = useContext(AppContext)
           </p>
         </div>
       )}
-    </div>
     <Buttons />
+    </div>
     </>
   );
 }

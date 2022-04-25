@@ -72,8 +72,8 @@ function CampaignPage5({ setEnable }) {
             );
           })}
         </div>
-      </div>
       <Buttons />
+      </div>
     </>
   );
 }
