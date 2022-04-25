@@ -7,17 +7,20 @@ function CampaignPage9() {
   return (
     <>
       <div className="submit-section">
+        <div>
+
         <button className="inactive preview" onClick={nextPage}>
           Preview
         </button>
         <button className="active submit" onClick={submitCampaign}>
           Submit
         </button>
-      </div>
-      {/* <Buttons /> */}
+        </div>
       <button className="prev-back-btn" onClick={prevPage}>
         Go Back
       </button>
+      </div>
+      {/* <Buttons /> */}
     </>
   );
 }

@@ -37,10 +37,11 @@ body {
 .campaign-section {
   display: flex;
   /* max-width: 560px; */
-  height: 80vh;
-  justify-content: center;
-  align-items: center;
+  height: calc(100vh - 80px);
+  /* justify-content: center; */
+  /* align-items: center; */
   margin: 0 auto;
+  padding: 5% 250px;
 }
  .campaign-section h3 {
 width: 560px;
@@ -287,9 +288,7 @@ margin-left: auto;
 .audience-section {
   margin-bottom: 39px;
 }
-.submit-section {
-  margin-bottom: 200px;
-}
+
 .preview {
   background: none !important;
   border: 1px solid #000 !important;
@@ -498,6 +497,7 @@ margin-left: auto;
 } 
 
 .prev-back-btn {
+  margin-top: 30%;
   width: 120px;
   height: 40px;
   text-align: center;
