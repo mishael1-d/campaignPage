@@ -395,7 +395,7 @@ textarea::placeholder {
 .search-btn-active {
   margin: 10px auto;
   text-align: center;
-  width: 90%;
+  width: 80%;
   padding: 15px;
   display: block;
   color: #fff;
@@ -404,19 +404,20 @@ textarea::placeholder {
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  font-size: 20px;
+  font-size: 18px;
   font-family: 'Poppins';
+  position: sticky;
 }
 .search-btn-inactive {
   margin: 10px auto;
   text-align: center;
   width: 80%;
-  height: 40px;
-  padding: 10px;
+  /* height: 40px; */
+  padding: 15px;
   display: block;
   color: #fff;
-  position: sticky;
-bottom: -20px;
+  position: absolute;
+/* bottom: -20px; */
   background: rgba(0, 0, 0, 0.7);
   border: none;
   border-radius: 5px;
@@ -510,11 +511,15 @@ bottom: -20px;
 .campaignDetails {
   display: flex;
   justify-content: space-between;
-  padding: 100px 130px;
+  padding: 100px;
+}
+.left-container {
+  flex: 70%;
+  margin-right: 10%;
 }
 .left-container .campaignDetailsImage {
-  width: 700px;
-  height: 500px;
+  width: 100%;
+  height: auto;
   margin-bottom: 25px;
 }
 .left-container .campaignDetailsImage img {
@@ -523,7 +528,7 @@ bottom: -20px;
   object-fit: cover;
 }
 .details-content {
-  max-width: 700px;
+  max-width: 100%;
 }
 .details-content h3 {
   font-weight: 600;
@@ -582,7 +587,6 @@ bottom: -20px;
   color: rgba(0, 0, 0, 0.7);
   font-size: 16px;
   font-weight: 500;
-  max-width: 650px;
   margin-bottom: 30px;
 }
 .cate,
@@ -1008,7 +1012,7 @@ textarea::placeholder {
   padding: 5px 0;
   cursor: pointer;
 }
-.search-btn-active {
+/* .search-btn-active {
   margin: 10px auto;
   text-align: center;
   width: 80%;
@@ -1035,7 +1039,7 @@ textarea::placeholder {
   border-radius: 5px;
   cursor: pointer;
   font-size: 18px;
-}
+} */
 .categories-value {
   width: -moz-fit-content !important;
   width: fit-content !important;
@@ -1153,7 +1157,7 @@ textarea::placeholder {
   justify-content: space-between;
   position: absolute;
   /* left: 5%; */
-  left: -15px;
+  /* left: -15px; */
   padding: 0;
 }
 .left-container{
@@ -1239,7 +1243,10 @@ textarea::placeholder {
   font-weight: 600;
   margin-bottom: 10px;
 }
-.right-container {padding: 50px 0 0 100px;
+.right-container {
+  padding: 30px;
+  display: flex;
+  overflow-x: auto;
 }
 
 .relatedC-images {
@@ -1258,7 +1265,7 @@ textarea::placeholder {
   width: fit-content;
   position: relative;
   top: -257px;
-  left: 187px;
+  /* left: 187px; */
   background-color: #f5b63a;
   color: #fff;
   border-top-left-radius: 10px;
@@ -1380,7 +1387,7 @@ textarea::placeholder {
     width: 300px;
   }
   .campaignDetails {
-    padding: 0 10px;
+    /* padding: 0 10px; */
     position: absolute;
     left: 0;
     top: 81px;
