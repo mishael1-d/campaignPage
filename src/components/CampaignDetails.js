@@ -20,10 +20,10 @@ function CampaignDetails() {
           <h3>Nykaa Brand campaign</h3>
           <p className="date-created">Posted: Apr, 03 2022</p>
           <button className="campaign-type">Barter Campaign</button>
-          <div className="actionBtns">
+          {/* <div className="actionBtns">
             <button className="btn-secondary">Message</button>
             <button className="btn-primary">Apply</button>
-          </div>
+          </div> */}
           <p className="content">
             Prepare for a career in the high-growth field of UX design, no
             experience required. With professional training designed by Google,
@@ -93,9 +93,9 @@ function CampaignDetails() {
           <h3 className="title">Cresent treasures</h3>
           <p className="small-content">Min 5k followers required</p>
           <div className="rc-sm-icons">
-            <img src={insta} alt="" srcset="" />
-            <img src={fb} alt="" srcset="" />
-            <img src={linkVector} alt="" srcset="" />
+            <img src={insta} alt="" />
+            <img src={fb} alt="" />
+            <img src={linkVector} alt="" />
           </div>
         </div>
         <div className="rt-ct">

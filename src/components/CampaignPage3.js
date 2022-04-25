@@ -3,22 +3,34 @@ import React, { useContext, useState } from "react";
 import addBtn from "../assets/plus.png";
 import { AppContext } from "../App";
 import Buttons from "./Buttons";
+import { Alert } from 'antd';
 function CampaignPage3() {
-  const { appState, setAppState, setEnable } = useContext(AppContext);
+  const { appState, setAppState, setEnable, warning, setWarning } = useContext(AppContext);
   const [selectedImages, setSelectedImages] = useState([]);
-
+const [message, setMessage] = useState("")
   const onFileChange = (e) => {
     const { ...newImage } = appState;
     if (e.target.files) {
-      if (e.target.files.length > 5 || newImage.campaignImage > 5) {
-        return alert("Maximum number of seleted images is 5");
-      } else {
+      if (e.target.files.length > 5) {
+          setMessage("Maximum number of seleted images is 5")
+          setWarning(!warning)
+        } else {
+        setWarning(false)
         const fileArray = Array.from(e.target.files).map((file) =>
           URL.createObjectURL(file)
         );
         console.log(fileArray);
         if (newImage.campaignImage.length > 0) {
-          newImage.campaignImage.concat(fileArray)
+          if (newImage.campaignImage.length === 5) {
+            setMessage("Maximum number of seleted images is 5")
+          setWarning(!warning)
+          }
+          else {
+            setWarning(false)
+            const images = newImage.campaignImage.concat(fileArray)
+            newImage.campaignImage = images
+            console.log(images);
+          }
         } else {
           newImage.campaignImage = fileArray;
         }
@@ -39,6 +51,7 @@ function CampaignPage3() {
     <>
       <div className="imagePage">
         <h3 className="heading">Please Select Images</h3>
+        {warning && <Alert message={message}/>}
         <div className="imageContainer">
           <div className="addImage addBtn">
             <input type="file" multiple id="image" onChange={onFileChange} />

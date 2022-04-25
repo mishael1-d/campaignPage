@@ -36,10 +36,10 @@ body {
 
 .campaign-section {
   max-width: 560px;
-  height: calc(100% - 700px);
+  height: auto;
   position: absolute;
-  top: 40%;
-  left: 20%;
+  top: 10rem;
+  left: 15%;
 }
  .campaign-section h3 {
 width: 560px;
@@ -694,7 +694,14 @@ textarea::placeholder {
   margin-bottom: 30px;
 } 
 /* WARNINGS SECTION */
-
+.ant-alert-info {
+  background-color: #f5cac9 !important;
+  border: 1px solid #d9363e !important;
+}
+.ant-alert {
+  margin: 10px 0 !important;
+  width: fit-content !important;
+}
 
 /* MOBILE RESPONSIVENESS */
 @media screen and (max-width: 960px) {

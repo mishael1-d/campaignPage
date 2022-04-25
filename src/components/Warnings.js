@@ -1,10 +1,9 @@
 import React from "react";
-
-function Warnings() {
+import { Alert } from 'antd';
+import 'antd/dist/antd.min.css'
+function Warnings({message}) {
   return (
-    <div className="warning">
-      <p className="warning-text">Only numbers are allowed</p>
-    </div>
+    <Alert message={message} type="error" showIcon closable={true} />
   );
 }
 

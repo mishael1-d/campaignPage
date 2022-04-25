@@ -55,6 +55,7 @@ function App() {
     } else {
       setEnable(false);
     }
+    setWarning(false)
   };
 
   const postRef = collection(db, "users");
@@ -69,7 +70,6 @@ function App() {
       categories: appState.categories,
       platforms: appState.platform,
       servicOptions: appState.serviceOption,
-      serviceDescription: appState.serviceDescription,
       gender: appState.targetGender,
     });
   };
