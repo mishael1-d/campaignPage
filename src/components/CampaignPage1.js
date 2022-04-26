@@ -3,7 +3,7 @@ import { AppContext } from "../App";
 import Buttons from "./Buttons"
 
 function CampaignPage1() {
-  const {appState, setAppState, addClass, setEnable} = useContext(AppContext);
+  const {appState, setAppState,setEnable} = useContext(AppContext);
   const handleNameChange = (e)=>{
     const {...newName} = appState
     newName.campaignName = e.target.value
