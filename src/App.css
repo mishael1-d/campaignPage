@@ -978,6 +978,10 @@ textarea::placeholder {
     right: 0;
     bottom: 0;
   }
+  .servicePage, .platformPage {
+    top: 0;
+    margin-bottom: 39px;
+  }
   .modal-container {
     position: fixed;
     display: flex;
@@ -1354,6 +1358,10 @@ textarea::placeholder {
   }
   .search-bar input[type="search"] {
     width: 100%;
+  }
+  .servicePage, .platformPage {
+    top: 0;
+    margin-bottom: 39px;
   }
   .campaignDetails {
     /* padding: 0 10px; */
