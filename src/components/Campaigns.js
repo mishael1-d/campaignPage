@@ -52,7 +52,7 @@ function Campaigns() {
       {page === 10 ? (
         <CampaignDetails />
       ) : (
-        <div className="campaign-section"> {displayPage()}</div>
+        <div> {displayPage()}</div>
       )}
     </>
   );

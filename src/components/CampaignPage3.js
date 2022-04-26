@@ -47,8 +47,7 @@ function CampaignPage3() {
   //   });
   // };
   return (
-    <>
-      <div className="imagePage">
+      <div className="campaign-section imagePage">
         <h3 className="heading">Please Select Images</h3>
         {warning && <Alert message={message}/>}
         <div className="imageContainer">
@@ -67,7 +66,6 @@ function CampaignPage3() {
         </div>
       <Buttons />
       </div>
-    </>
   );
 }
 

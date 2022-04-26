@@ -6,7 +6,7 @@ function CampaignPage9() {
     useContext(AppContext);
   return (
     <>
-      <div className="submit-section">
+      <div className="campaign-section submit-section">
         <div>
 
         <button className="inactive preview" onClick={nextPage}>

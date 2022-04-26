@@ -15,7 +15,7 @@ function CampaignPage1() {
     setAppState(newName)
   }
   return (
-    <div className={`page-inactive ${addClass}`}>
+    <div className="campaign-section">
       <h3 className="heading">What's your campaign name?</h3>
       <input
         type="text"

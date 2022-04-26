@@ -44,7 +44,7 @@ function CampaignPage4({ setEnable }) {
   };
   return (
     <>
-      <div className="servicePage">
+      <div className="campaign-section servicePage">
         <h3 className="heading">Do You Want To:</h3>
         <div className="inputContainer">
           <div

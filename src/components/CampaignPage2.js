@@ -14,7 +14,7 @@ function CampaignPage2() {
     }
   }
   return (
-    <div className="descPage">
+    <div className="campaign-section descPage">
       <h3 className="heading">What's your campaign description?</h3>
       <textarea
         placeholder="for e.g Type every details that you required from influencers"

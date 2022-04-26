@@ -28,7 +28,7 @@ function CampaignPage6() {
     setAppState(newState);
   };
   return (
-    <div>
+    <div className="campaign-section">
       <h3 className="heading">Minimum Followers</h3>
       <input
         type="text"

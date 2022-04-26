@@ -25,7 +25,7 @@ function CampaignPage8({ setEnable }) {
 
   return (
     <>
-      <div className="audience-section">
+      <div className="campaign-section audience-section">
         <h3 className="heading">Choose categories for your product</h3>
         <div
           className={

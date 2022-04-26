@@ -52,7 +52,7 @@ function CampaignPage5({ setEnable }) {
 
   return (
     <>
-      <div className="platformPage">
+      <div className="campaign-section platformPage">
         <h3 className="heading">Select the Platforms:</h3>
         <div className="inputContainer">
           {platformOptions.map((option) => {

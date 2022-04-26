@@ -5,6 +5,8 @@ import Campaigns from "./components/Campaigns";
 import { addDoc, collection } from "firebase/firestore";
 import { db } from "./firebase";
 export const AppContext = React.createContext();
+
+//Functionality for ENTER KEY press
 const useOnEnterKeyPress = (key, cb) => {
   const callbackRef = useRef(cb);
   useEffect(() => {
@@ -20,10 +22,10 @@ const useOnEnterKeyPress = (key, cb) => {
     return () => document.removeEventListener("keypress", handle);
   }, [key]);
 };
+
 function App() {
   const [page, setPage] = useState(0);
   const [enable, setEnable] = useState(false);
-
   const [message, setMessage] = useState("")
   const [activeOptionA, setActiveOptionA] = useState(false);
   const [activeOptionB, setActiveOptionB] = useState(false);
@@ -40,6 +42,7 @@ function App() {
     selected: [],
   });
 
+  //Get the values of the in each key-value pair of the state
   const stateKeys = Object.values(appState);
   const prevPage = () => {
     setPage((currentPage) => currentPage - 1);

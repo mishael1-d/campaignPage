@@ -18,7 +18,7 @@ const {appState, setAppState} = useContext(AppContext)
 
   return (
     <>
-    <div className="audience-section">
+    <div className="campaign-section audience-section">
       <h3 className="heading">Gender for your Target Audience</h3>
       <div
         className="optionContainer"
