@@ -43,7 +43,7 @@ function CampaignPage8({ setEnable }) {
           )}
         </div>
         {showCategory && (
-          <Modal closeModal={closeModal} setCategories={setCategories} />
+          <Modal closeModal={closeModal} setCategories={setCategories} setShowCategory={setShowCategory}/>
         )}
       <Buttons />
       </div>

@@ -1,8 +1,10 @@
 /* eslint-disable array-callback-return */
-import React, { useContext, useState } from "react";
+import React, { useContext, useState, useRef, useEffect } from "react";
 import { AppContext } from "../App";
 import checkbox from "../assets/checkbox.png";
-function Modal({ closeModal, setCategories }) {
+function Modal({ closeModal, setCategories, setShowCategory }) {
+  const ref = useRef(null)
+  useOnClickOutside(ref, ()=> setShowCategory(false))
   const [searchTerm, setSearchTerm] = useState("");
   const { appState, setAppState } = useContext(AppContext);
   const [catStyle, setCatStyle] = useState(false)
@@ -84,7 +86,7 @@ function Modal({ closeModal, setCategories }) {
   return (
     <div className="modal-container">
       <div className="overlay"></div>
-      <div className="modal">
+      <div className="modal" ref={ref}>
         <h3>Select Categories</h3>
         <div className="search-bar">
           <input
@@ -133,6 +135,22 @@ function Modal({ closeModal, setCategories }) {
       </div>
     </div>
   );
+}
+function useOnClickOutside(ref, handler) {
+  useEffect(()=>{
+    const listener = (e)=> {
+      if (!ref.current || ref.current.contains(e.target)) {
+        return;
+      }
+      handler(e)
+    }
+    document.addEventListener("mousedown", listener)
+    document.addEventListener("touchstart", listener)
+    return ()=> {
+      document.removeEventListener("mousedown", listener)
+      document.removeEventListener("touchstart", listener)
+    }
+  }, [ref, handler])
 }
 
 export default Modal;

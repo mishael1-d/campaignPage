@@ -208,7 +208,8 @@ textarea::placeholder {
   border-radius: 5px;
   object-fit: cover;
 }
-.servicePage {
+.servicePage, .platformPage {
+  top: 100px;
   margin-bottom: 39px;
 }
 .inputContainer {
@@ -959,7 +960,7 @@ textarea::placeholder {
     font-weight: 600;
     border-top: none;
     position: relative;
-    top: -27px;
+    top: -45px;
   }
   .gender-list p {
     padding: 10px 0;
@@ -989,11 +990,12 @@ textarea::placeholder {
   .modal {
     width: 500px;
     position: absolute;
-    max-height: 600px;
+    max-height: 70%;
     background: #fff;
     border-radius: 10px;
     padding: 50px 40px;
     z-index: 600;
+    overflow-x: hidden;
   }
   .categories {
     display: flex;
