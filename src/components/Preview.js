@@ -6,6 +6,11 @@ function Preview({ prevPage }) {
   return (
     <>
       <div className="preview-container">
+      <div className="bk-ct">
+          <button className="back-btn" onClick={prevPage}>
+            Go Back
+          </button>
+        </div>
         <div className="details-content">
           <div className="preview-image">
             <img src={appState.campaignImage[0]} alt="" />
@@ -28,11 +33,6 @@ function Preview({ prevPage }) {
               return <span key={platform}>{platform}</span>;
             })}
           </div>
-        </div>
-        <div className="bk-ct">
-          <button className="back-btn" onClick={prevPage}>
-            Go Back
-          </button>
         </div>
       </div>
     </>
