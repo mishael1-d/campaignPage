@@ -1048,7 +1048,7 @@ textarea::placeholder {
     position: relative;
     /* top: 15%; */
     /* left: 5%; */
-    padding: 50px;
+    padding: 30px;
   }
   .preview-image {
     width: 500px;
