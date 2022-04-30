@@ -2,38 +2,43 @@
 import React, { useContext, useState, useRef, useEffect } from "react";
 import { AppContext } from "../App";
 import checkbox from "../assets/checkbox.png";
+import Warnings from "./Warnings";
 function Modal({ closeModal, setCategories, setShowCategory }) {
-  const ref = useRef(null)
-  useOnClickOutside(ref, ()=> setShowCategory(false))
+  const ref = useRef(null);
+  useOnClickOutside(ref, () => setShowCategory(false));
   const [searchTerm, setSearchTerm] = useState("");
-  const { appState, setAppState } = useContext(AppContext);
-  const [catStyle, setCatStyle] = useState(false)
+  const { appState, setAppState, warning, setWarning, message, setMessage } =
+    useContext(AppContext);
+  const [catStyle, setCatStyle] = useState(false);
 
   const handleSelect = (data, index) => {
     let { ...newData } = appState;
     let filter = [];
-      const exist = newData.selected.find((val) => val === data);
-      if (newData.selected.length === 5) {
-        filter = newData.selected.filter((val) => val !== data);
-        newData.selected = filter;
-        setCatStyle(v=>!v)
-      }
-      else if (!exist) {
-        newData.selected.push(data);
-        setCategories(newData.selected.join(', '));
-        // setCatStyle(false)
-      } else {
-        filter = newData.selected.filter((val) => val !== data);
-        newData.selected = filter;
-      }
-      setCategories(newData.selected.join(', '));
-      if (!newData.categories.includes(data)) {
-        newData.categories.push(data);
-        setAppState(newData);
-      } else {
-        setAppState(newData);
-      }
+    const exist = newData.selected.find((val) => val === data);
+    if (newData.selected.length === 5) {
+      filter = newData.selected.filter((val) => val !== data);
+      newData.selected = filter;
+      setCatStyle((v) => !v);
+      setWarning(true);
+      setMessage("Max number of category selected");
+    } else if (!exist) {
+      newData.selected.push(data);
+      setCategories(newData.selected.join(", "));
+      // setCatStyle(false)
+      // setWarning(false)
+    } else {
+      filter = newData.selected.filter((val) => val !== data);
+      newData.selected = filter;
+      // setWarning(false)
     }
+    setCategories(newData.selected.join(", "));
+    if (!newData.categories.includes(data)) {
+      newData.categories.push(data);
+      setAppState(newData);
+    } else {
+      setAppState(newData);
+    }
+  };
 
   const categories = [
     {
@@ -87,6 +92,7 @@ function Modal({ closeModal, setCategories, setShowCategory }) {
     <div className="modal-container">
       <div className="overlay"></div>
       <div className="modal" ref={ref}>
+        {warning && <Warnings message={message} />}
         <h3>Select Categories</h3>
         <div className="search-bar">
           <input
@@ -114,7 +120,9 @@ function Modal({ closeModal, setCategories, setShowCategory }) {
                 key={category.name}
                 onClick={() => handleSelect(category.name)}
               >
-                <p className={catStyle ? "blackCat" : "whiteCat"}>{category.name}</p>
+                <p className={catStyle ? "blackCat" : "whiteCat"}>
+                  {category.name}
+                </p>
                 {appState.selected.includes(category.name) && (
                   <img src={checkbox} alt="Selected" />
                 )}
@@ -137,20 +145,20 @@ function Modal({ closeModal, setCategories, setShowCategory }) {
   );
 }
 function useOnClickOutside(ref, handler) {
-  useEffect(()=>{
-    const listener = (e)=> {
+  useEffect(() => {
+    const listener = (e) => {
       if (!ref.current || ref.current.contains(e.target)) {
         return;
       }
-      handler(e)
-    }
-    document.addEventListener("mousedown", listener)
-    document.addEventListener("touchstart", listener)
-    return ()=> {
-      document.removeEventListener("mousedown", listener)
-      document.removeEventListener("touchstart", listener)
-    }
-  }, [ref, handler])
+      handler(e);
+    };
+    document.addEventListener("mousedown", listener);
+    document.addEventListener("touchstart", listener);
+    return () => {
+      document.removeEventListener("mousedown", listener);
+      document.removeEventListener("touchstart", listener);
+    };
+  }, [ref, handler]);
 }
 
 export default Modal;
