@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useContext, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import DetailsImage from "../assets/Details-image.png";
 import instagram from "../assets/instagram.png";
 import insta from "../assets/insta-vector.png";
@@ -9,7 +10,15 @@ import linkedin from "../assets/linkedin.png";
 import linkVector from "../assets/link-vector.png";
 import youtube from "../assets/youtube.png";
 import rcImage from "../assets/rcimage.png";
+import { AppContext } from "../App";
 function CampaignDetails() {
+  const { auth } = useContext(AppContext);
+  const navigate = useNavigate();
+  useEffect(() => {
+    if (!auth) {
+      navigate("/");
+    }
+  });
   return (
     <div className="campaignDetails">
       <div className="left-container">

@@ -29,6 +29,7 @@ const useOnEnterKeyPress = (key, cb) => {
 
 function App() {
   const [page, setPage] = useState(0);
+  const [auth, setAuth] = useState(false)
   const [enable, setEnable] = useState(false);
   const [message, setMessage] = useState("");
   const [activeOptionA, setActiveOptionA] = useState(false);
@@ -90,7 +91,9 @@ function App() {
       servicOptions: appState.serviceOption,
       gender: appState.targetGender,
     });
+    setAuth(true)
   };
+
 
   return (
     <BrowserRouter>
@@ -115,11 +118,12 @@ function App() {
           setActiveOptionB,
           message,
           setMessage,
+          auth
         }}
       >
         <Routes>
           <Route path="/" exact element={<CampaignPage1 />} />
-          {page === 10 ? <Route path="campaign-details" exact element={<CampaignDetails />} /> : <Route path="/" exact element={<CampaignPage1 />} /> }
+          <Route path="campaign-details" exact element={<CampaignDetails />} />
           </Routes>
       </AppContext.Provider>
     </BrowserRouter>
