@@ -34,7 +34,8 @@ function Campaigns() {
       return <CampaignPage8 setEnable={setEnable} />;
     } else if (page === 8) {
       return <CampaignPage9 setEnable={setEnable} />;
-    } else if (page === 9) {
+    } 
+    else if (page === 9) {
       return (
         <Preview
           setEnable={setEnable}
@@ -42,9 +43,10 @@ function Campaigns() {
           nextPage={nextPage}
         />
       );
-    } else if (page === 10) {
-      return <CampaignDetails setEnable={setEnable} />;
-    }
+    } 
+  //   else if (page === 10) {
+  //   //   return <CampaignDetails setEnable={setEnable} />;
+  //   // }
   };
 
   return (

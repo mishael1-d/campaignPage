@@ -1,9 +1,12 @@
 import React, { useEffect, useRef, useState } from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./App.css";
 import Navbar from "./components/Navbar";
 import Campaigns from "./components/Campaigns";
 import { addDoc, collection } from "firebase/firestore";
 import { db } from "./firebase";
+// import Preview from "./components/Preview";
+import CampaignDetails from "./components/CampaignDetails";
 export const AppContext = React.createContext();
 
 //Functionality for ENTER KEY press
@@ -26,7 +29,7 @@ const useOnEnterKeyPress = (key, cb) => {
 function App() {
   const [page, setPage] = useState(0);
   const [enable, setEnable] = useState(false);
-  const [message, setMessage] = useState("")
+  const [message, setMessage] = useState("");
   const [activeOptionA, setActiveOptionA] = useState(false);
   const [activeOptionB, setActiveOptionB] = useState(false);
   const [warning, setWarning] = useState(false);
@@ -46,7 +49,10 @@ function App() {
   const stateKeys = Object.values(appState);
   const prevPage = () => {
     setPage((currentPage) => currentPage - 1);
-    if (stateKeys[page - 1].length > 0 && (stateKeys[page - 1] !== "" || stateKeys[page - 1] !== [])) {
+    if (
+      stateKeys[page - 1].length > 0 &&
+      (stateKeys[page - 1] !== "" || stateKeys[page - 1] !== [])
+    ) {
       setEnable(true);
     } else {
       setEnable(false);
@@ -54,13 +60,18 @@ function App() {
   };
   const nextPage = () => {
     setPage((currentPage) => currentPage + 1);
-    if(page !== 8){
-      if (stateKeys[page + 1].length > 0 && (stateKeys[page + 1] !== "" || stateKeys[page + 1] !== [] || stateKeys[page + 1] !== "Select your gender")) {
+    if (page !== 8) {
+      if (
+        stateKeys[page + 1].length > 0 &&
+        (stateKeys[page + 1] !== "" ||
+          stateKeys[page + 1] !== [] ||
+          stateKeys[page + 1] !== "Select your gender")
+      ) {
         setEnable(true);
       } else {
         setEnable(false);
       }
-      setWarning(false)
+      setWarning(false);
     }
   };
 
@@ -81,7 +92,7 @@ function App() {
   };
 
   return (
-    <>
+    <BrowserRouter>
       <Navbar />
       <AppContext.Provider
         value={{
@@ -102,12 +113,15 @@ function App() {
           activeOptionB,
           setActiveOptionB,
           message,
-          setMessage
+          setMessage,
         }}
       >
-        <Campaigns />
+        <Routes>
+          <Route path="/" exact element={<Campaigns />} />
+          <Route path="campaign-details" exact element={<CampaignDetails />} />
+        </Routes>
       </AppContext.Provider>
-    </>
+    </BrowserRouter>
   );
 }
 

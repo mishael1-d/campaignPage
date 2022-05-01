@@ -1,4 +1,5 @@
 import React, { useContext } from "react";
+import { Link } from "react-router-dom";
 import { AppContext } from "../App";
 // import Buttons from "./Buttons"
 function CampaignPage9() {
@@ -12,9 +13,11 @@ function CampaignPage9() {
         <button className="inactive preview" onClick={nextPage}>
           Preview
         </button>
+        <Link to="campaign-details">
         <button className="active submit" onClick={submitCampaign}>
           Submit
         </button>
+        </Link>
         </div>
       <button className="prev-back-btn" onClick={prevPage}>
         Go Back

@@ -663,7 +663,7 @@ textarea::placeholder {
   width: fit-content;
   position: relative;
   top: -257px;
-  left: 186px;
+  left: 204px;
   background-color: #f5b63a;
   color: #fff;
   border-top-left-radius: 10px;
@@ -1248,10 +1248,11 @@ textarea::placeholder {
     margin-bottom: 20px;
   }
   .rc-content {
+    width: -moz-fit-content;
     width: fit-content;
     position: relative;
     top: -257px;
-    /* left: 187px; */
+    left: 204px;
     background-color: #f5b63a;
     color: #fff;
     border-top-left-radius: 10px;
@@ -1436,6 +1437,10 @@ textarea::placeholder {
   }
   .preview-container {
     flex-direction: column;
+  }
+  .rc-content {
+    left: -116px;
+    position: relative;
   }
 }
 

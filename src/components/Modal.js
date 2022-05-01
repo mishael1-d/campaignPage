@@ -24,12 +24,9 @@ function Modal({ closeModal, setCategories, setShowCategory }) {
     } else if (!exist) {
       newData.selected.push(data);
       setCategories(newData.selected.join(", "));
-      // setCatStyle(false)
-      // setWarning(false)
     } else {
       filter = newData.selected.filter((val) => val !== data);
       newData.selected = filter;
-      // setWarning(false)
     }
     setCategories(newData.selected.join(", "));
     if (!newData.categories.includes(data)) {
