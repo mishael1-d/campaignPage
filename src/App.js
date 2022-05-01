@@ -2,7 +2,8 @@ import React, { useEffect, useRef, useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./App.css";
 import Navbar from "./components/Navbar";
-import Campaigns from "./components/Campaigns";
+// import Campaigns from "./components/Campaigns";
+import CampaignPage1 from "./components/CampaignPage1"
 import { addDoc, collection } from "firebase/firestore";
 import { db } from "./firebase";
 // import Preview from "./components/Preview";
@@ -117,9 +118,9 @@ function App() {
         }}
       >
         <Routes>
-          <Route path="/" exact element={<Campaigns />} />
-          <Route path="campaign-details" exact element={<CampaignDetails />} />
-        </Routes>
+          <Route path="/" exact element={<CampaignPage1 />} />
+          {page === 10 ? <Route path="campaign-details" exact element={<CampaignDetails />} /> : <Route path="/" exact element={<CampaignPage1 />} /> }
+          </Routes>
       </AppContext.Provider>
     </BrowserRouter>
   );
