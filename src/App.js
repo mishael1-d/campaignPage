@@ -123,7 +123,7 @@ function App() {
       >
         <Routes>
           <Route path="/" exact element={<CampaignPage1 />} />
-          <Route path="campaign-details" exact element={<CampaignDetails />} />
+          {page === 10 ? <Route path="campaign-details" exact element={<CampaignDetails />} /> : <Route path="/" exact element={<CampaignPage1 />} /> }
           </Routes>
       </AppContext.Provider>
     </BrowserRouter>
